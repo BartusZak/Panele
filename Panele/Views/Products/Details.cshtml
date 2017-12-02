@@ -1,0 +1,115 @@
+﻿@model Panele.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Szczegóły</title>
+    <link href="~/Content/DetailStyles.css" rel="stylesheet" />
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+    <link href="~/Content/MainStyles.css" rel="stylesheet" />
+    <link href="~/Content/OfertStyles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+</head>
+<body>
+    @Html.Partial("_navBar")
+    <div id="detailContainer"> 
+        <div id="secondContainer">
+            <div id="leftPhoto">
+                <img src="~/Content/image_2100 (1).jpg" />
+            </div>
+            <div id="rightAdnotations">
+                <h2>@Model.Name</h2>
+                <div id="leftCont">
+                    <div id="company">                      
+                        <h3>@Model.Company</h3>
+                    </div>
+                    <div id="informations">
+                        <ul>
+                            <li>Szczegółowe wykonanie</li>
+                            <li>Szczegółowe wykonanie</li>
+                            <li>Szczegółowe wykonanie</li>
+                        </ul>
+                        <br/>
+                        <p id="firstP" style="font-weight: bold;">Opis produktu</p>
+                        <br/>
+                        <br/>
+                        <p style="font-weight: bold;">Kolor: </p>
+                        <p>@Model.Color</p>
+                        <p style="font-weight: bold;">Dostępność w sklepie: </p>
+                        <p>@Model.State</p>
+                        <p style="font-weight: bold;">Data dodania: </p>
+                        <p>@Model.AddDate.ToString()</p>
+                    </div>
+                </div>
+                <div id="rightCont">
+                     <ul>
+                         <li>
+                             <div style="float: left; height: 110px; padding: 10px;">
+                                 Ilość: @Html.TextBox("elo")
+                             </div>
+                             <div style="float: left; height: 110px; padding: 10px; text-align: right; width: 220px;">
+                                 <b  style="font-size: 30px;"><span>@Model.Cost</span> zł</b>
+                                 <p>@Model.Cost / szt</p>
+                                 <p style="font-size: 12px;">Cena zawiera podatek VAT 23%</p>
+                             </div>
+                             <div style="clear:both;"></div>
+                         </li>
+                         <li> 
+                               <div id="leftCont1">
+                                   <br/>
+                                   <b>Zamów i odbierz w sklepie</b>
+                                   <br/>
+                                   <br />
+                                   Produkt będzie dostępny już następnego dnia roboczego!
+                               </div> 
+                             <div id="rightCont1">
+                                 <p><i class="icon-suitcase"></i></p>
+                             </div>
+                         </li>
+                         <li>
+                             <p><b style="color: black;">W sklepie F.H.U. PANELEO</b> dostepność produktów jest ograniczona. Przed odwiedzeniem postaraj się sprawdzić dostępność na stronie.</p>
+                            
+                         </li>
+                     </ul>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <div class="advforYou">
+                <h2>Rekomendacje dla Ciebie</h2>
+                <div class="advforYouContainer">
+                    <ul>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="advforYou">
+                <h2>Podobne produkty</h2>
+                <div class="advforYouContainer">
+                    <ul>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+
+                    </ul>
+                </div>
+
+            </div>
+    @Html.Partial("_preFooter")
+    @Html.Partial("_footer")
+</body>
+</html>

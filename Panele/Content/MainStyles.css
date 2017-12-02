@@ -1,0 +1,507 @@
+﻿body {
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    background-color: #F5F5F5;
+}
+#navBar {
+    background-color: #ff7e21;
+    width: 100%;
+    height: 199px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-bottom-color: black;
+    color: white;
+   
+}
+.logo {
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 2px;
+    font-size: 30px;
+    float: left;
+    line-height: 150%;
+    font-weight: bold;
+    padding: 35px;
+}
+.logo span{
+    margin-left: 60px;
+    color: brown;
+}
+#options {
+    float: left;
+    margin-top: 110px;
+    margin-left: 200px;
+    width: 700px;
+    height: 60px;
+   
+}
+#options ul > li{
+    text-align: center;
+    display: inline-block;
+    letter-spacing: 2px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    font-size: 20px;
+    color: white;
+}
+#options ul > li > a{
+    text-align: center;
+    display: inline-block;
+    letter-spacing: 2px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+
+}
+#options ul > li > a:hover{
+    cursor:pointer;
+    font-size: 26px;
+}
+
+#content {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.advies{
+    width: 1280px;
+    text-align: justify;
+}
+#advise1 {
+    width: 670px;
+    margin-right: 46px;
+    height: 400px;
+    float: left;
+    background-image: url('adv2.jpg');
+}
+
+#advise2 {
+    width: 560px;
+    background-color: red;
+    height: 400px;
+    float: left;
+    background-image: url('adv 1.jpg');
+}
+#advise2:hover{
+     cursor: pointer;
+}
+
+.annotation {
+    text-align: justify;
+    font-size: 24px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.annotation h1{
+     margin-left: 10px;
+     padding: 10px;
+}
+span{
+    margin-left: 24px;
+}
+.backgrounds {
+    background: rgba(255,255,255, 0.7);
+    font-size: 20px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: justify;
+}
+p > span {
+    color: orangered;
+    font-size: 20px;
+}
+p > span:hover{
+    cursor: pointer;
+    
+}
+.advforYou {
+    margin-top: 60px;
+    width: 1246px;
+    border-width: 2px;
+    border: solid;
+    border-color: #dedede;
+    height: 355px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+   
+}
+.advforYouContainer{
+    margin-left: -60px;
+}
+.advforYou ul > li{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+.bigAdv {
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 60px;
+    width: 1246px;
+    border-width: 2px;
+    border: solid;
+    border-color: #dedede;
+    height: 350px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    background-image: url('image_2100.jpg');
+}
+#classCont {
+    width: 1280px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.brotherAdv {
+    float: left;
+    width: 578px;
+    height: 350px;
+    border-width: 2px;
+    border: solid;
+    border-color: #dedede;
+    background: rgba(255,255,255, 0.7);
+    margin-top: 60px;
+
+}
+
+#subMenu {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+    margin-top: 60px;
+    font-family: 'Josefin Sans', sans-serif;
+   
+    color: white;
+}
+#secondNavBar {
+    height: 50px;
+    background-color: #ff7e21;
+    width: 1250px;
+    padding: 15px;
+    font-size: 24px;
+}
+#secondNavBar input[type=text]{
+    height: 24px;
+    margin-top: 8px;
+    width: 200px;
+    margin-left: 20px;
+}
+#leftItemSM {
+    width: 140px;
+    color: white;
+    height: 390px;
+    float: left;
+    margin-top: 60px;
+    background-color: #ff7e21;
+  
+}
+#leftItemSM ul{
+    margin-top: 90px;
+}
+#leftItemSM ul > li {
+    margin-top: 30px;
+    list-style: none;
+    font-size: 18px;
+}
+#leftItemSM ul > li:hover{
+    cursor: pointer;
+}
+#holderContainer {
+    width: 1130px;
+    height: 390px;
+    margin-top: 60px;
+    float: left;
+    margin-left: 10px;
+}
+.leftPhoto {
+    float: left;
+    height: 390px;
+    width: 630px;
+}
+.rightPhoto {
+    float: left;
+    width: 470px;
+    height: 390px;
+    margin-left: 30px;
+}
+.backgrounds1 {
+    margin-top: 10px;
+    color: black;
+    background: rgba(255,255,255, 0.7);
+    font-size: 20px;
+    text-align: justify;
+    padding: 10px;
+    height: 260px;
+    width: 590px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.backgrounds2 {
+    margin-top: 10px;
+    color: black;
+    background: rgba(255,255,255, 0.7);
+    font-size: 20px;
+    text-align: justify;
+    height: 260px;
+    width: 430px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+#prefooter {
+  
+    width: 100%;
+    height: 120px;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #f4f4f4;
+  
+    text-align: center;
+}
+#utility{
+    margin-left: -290px;
+}
+#utility ul > li{
+    display: inline-block;
+    margin-left: 200px;
+    margin-top: 40px;
+    font-size: 20px;
+  
+}
+#utility ul > li > span{
+  color: #ff7e21;
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+#utility ul > li:hover {
+    cursor: pointer;
+}
+#footer {
+    font-family: 'Josefin Sans', sans-serif;
+    width: 100%;
+    height: 400px;
+    background-color: #ededed;
+ 
+}
+
+#footerCont{
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.othCont{
+    margin-right: 60px;
+    margin-left: 10px;
+}
+
+.sCont{
+    width: 380px;
+    float: left;
+    margin-right: 20px;
+   
+}
+#socials{
+    margin-top: 50px;
+}
+#socials ul > li{
+     list-style: none;
+     color: #ff7e21;
+     margin-left: -30px;
+}
+#fb{
+    float: left; 
+    font-size: 50px;
+    margin-left: 10px;
+    margin-top: 20px;
+ 
+}
+#fb:hover{
+    cursor: pointer;
+}
+#tw {
+    float: left;
+    font-size: 54px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+#tw:hover{
+       cursor: pointer;
+}
+.ident{
+    padding-top: 20px;
+    margin-left: -70px;
+    float: left;
+    width: 300px;
+}
+.ident p{
+color: #ff7e21;
+}
+
+.contentOfnextPages {
+    padding: 20px;
+    width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+   
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 20px;
+    font-size: 24px;
+    line-height: 1.1;
+}
+.contentOfnextPages a{
+     text-decoration: none;
+    color: #ff7e21;
+}
+
+#secondFirstAbout {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+#thirdFirstAbout {
+    float: left;
+    width: 610px;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+#fourthFirstAbout {
+    float: left;
+    padding: 20px;
+    width: 550px;
+}
+
+/* Kadra */
+
+.mainCont {
+    width: 1240px;
+    padding: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.leftElement{
+    float: left;
+    width: 580px;
+    padding: 20px;
+}
+.rightElement {
+    float: left;
+    width: 580px;
+    padding: 20px;
+}
+.aboutBar {
+    width: 540px;
+    background-color: #ff7e21;
+    height: 160px;
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+}
+.aboutBar h1{
+    margin-top: 50px;
+}
+.aboutBar:hover{
+    cursor: pointer;
+    background-color: #ee6d10;
+}
+.rightElement > h2{
+    margin-bottom: 70px;
+    margin-left: 20px;
+}
+.leftTitle{
+    float: left;
+    margin-left: 30px;
+}
+.rightTitle {
+    float: left;
+    margin-left: 200px;
+   
+}
+.bar1 {
+    width: 200px;
+    height: 200px;
+    background-color: #3095d3;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    margin-left: 70px;
+    margin-top: 40px;
+    display: block;
+    font-size: 50px;
+}
+.bar1:hover {
+    cursor: pointer;  
+}
+.bar2 {
+    
+    margin-top: 40px;
+    width: 200px;
+    height: 200px;
+    background-color: #3095d3;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    margin-left: 40px;
+    display: block;
+    font-size: 50px;
+}
+.bar2:hover{
+    cursor: pointer;
+    background-color: #2084e2;
+}
+
+.bar3 {
+  
+    width: 200px;
+    height: 200px;
+    background-color: #ee5a32;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    margin-left: 70px;
+    margin-top: 40px;
+    display: block;
+    font-size: 50px;
+}
+.bar3:hover {
+    cursor: pointer;
+    background-color: #dd4a21;
+}
+.bar4 {
+    margin-top: 40px;
+    width: 200px;
+    height: 200px;
+    background-color: #93c748;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    margin-left: 40px;
+    display: block;
+    font-size: 54px;
+}
+.bar4:hover{
+    cursor: pointer;
+    background-color: #82b637;
+}
+.barContent{
+    margin-top: 20px;
+}
+
+.mainCont p {
+    margin-top: 70px;
+
+}
+.pictures:hover{
+    cursor: pointer;
+}

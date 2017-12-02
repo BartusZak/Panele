@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Panele.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>F.H.U. PANELEO</title>
+
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+    <link href="~/Content/MainStyles.css" rel="stylesheet" />
+    <link href="~/Content/OfertStyles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+</head>
+<body>
+    <div>
+        @Html.Partial("_navBar")
+        <div class="Container">
+            <div class="SearchPanel">
+                <ul>
+                    <li>adsadadsa</li>
+                    <li>adsadadsa</li>
+                    <li>adsadadsa</li>
+                    <li>adsadadsa</li>
+                    <li>adsadadsa</li>
+                    <li>adsadadsa</li>
+                    <li>adsadadsa</li>
+                </ul>
+            </div>
+            <div class="Content">
+             @foreach(var element in Model)
+             {
+                    <div class="table">
+
+                        <div class="title">
+                            <p>@Html.ActionLink(element.Name, "Details", "Products", new { id = element.Id }, null)</p>
+
+                        </div>
+                        <div class="state">
+                            <p><span style="margin: 0px;">Status:  </span>@element.State</p>
+
+                        </div>
+                        <div class="corp">
+                            <p> <span style="margin: 0px;">Firma: </span> @element.Company</p>
+                        </div>
+                        <div class="rate">
+                            <p>
+                                <i class="icon-star-empty"></i>
+                                <i class="icon-star-empty"></i>
+                                <i class="icon-star-empty"></i>
+                                <i class="icon-star-empty"></i>
+                                <i class="icon-star-empty"></i>
+                            </p>
+                        </div>
+                        <div class="imgContent">
+                            <p><img src="~/Content/image.jpg" width="223" height="200" /></p>
+                        </div>
+                        <div class="costLook">
+                            <div class="leftLook">
+                                @element.Cost
+                            </div>
+                            <div class="rightLook">
+                                <i class="icon-suitcase"></i>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+
+             }
+
+            </div>
+
+            <div style="clear: both;"></div>
+        </div>
+
+
+        @Html.Partial("_preFooter")
+        @Html.Partial("_footer")
+    </div>
+</body>
+</html>

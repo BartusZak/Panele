@@ -1,0 +1,119 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/MainStyles.css" rel="stylesheet" />
+    <script src="~/Scripts/contentChanger.js"></script>
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+    <title>Kadra</title>
+</head>
+<body>
+        @Html.Partial("_navBar")
+        <div id="firstChange" style="display: none;">
+            <img src="~/Content/Pictures/typki/typek1.jpg" width="200" height="200" />
+        </div>
+        <div id="secondChange" style="display: none;">
+            <p style="font-size: 24px; margin-top: 80px;">13:12:2007</p>
+        </div>
+        <div id="thirdChange" style="display: none;">
+            <p style="font-size: 24px; margin-top: 80px;">jankowal@wp.pl</p>
+        </div>
+        <div id="fourthChange" style="display: none;">
+            <p style="font-size: 24px; margin-top: 80px;">523 334 323</p>
+        </div>
+
+
+        <div style="display: none;" id="Img1">
+            <img onclick="galeryChanger()" class="pictures" src="~/Content/Kolonko/kolonko1.jpg"  height="650" width="1280" />
+        </div>
+        <div style="display: none;" id="Img2">
+            <img onclick="galeryChanger()" class="pictures" src="~/Content/Kolonko/kolonko2.jpg" height="650" width="1280" />
+        </div>
+        <div style="display: none;" id="Img3">
+            <img onclick="galeryChanger()" class="pictures" src="~/Content/Kolonko/kolonko3.jpg" height="650" width="1280" />
+        </div>
+        <div style="display: none;" id="Img4">
+            <img onclick="galeryChanger()" class="pictures" src="~/Content/Kolonko/kolonko4.jpg" height="650" width="1280" />
+        </div>
+        <div style="display: none;" id="Img5">
+            <img onclick="galeryChanger()" class="pictures" src="~/Content/Kolonko/kolonko5.jpg" height="650" width="1280" />
+        </div>
+        <div style="display: none;" id="Img6">
+            <img onclick="galeryChanger()" class="pictures" src="~/Content/Kolonko/kolonko6.jpg" height="650" width="1280" />
+        </div>
+        <div style="display: none;" id="Img7">
+            <img onclick="galeryChanger()" class="pictures" src="~/Content/Kolonko/kolonko7.jpg" height="650" width="1280" />
+        </div>
+        <div style="display: none;" id="Img8">
+            <img onclick="galeryChanger()" class="pictures" src="~/Content/Kolonko/kolonko8.jpg" height="650" width="1280" />
+        </div>
+        
+
+    <div class="mainCont" id="generator">
+        <div class="leftElement">
+            <div class="leftTitle">
+                <h2 style="text-shadow: 2px 2px grey;">Jan Kolonko - architekt wnętrz</h2>
+            </div>
+            <div class="rightTitle">
+            </div>
+
+            <div style="clear: both;"></div>
+
+            <div id="1" onmouseover="contentChange(1, 'firstChange')" class="bar1">
+                <p><i class="icon-user"></i></p>
+
+            </div>
+            <div id="2" class="bar2" onmouseover="contentChange(2, 'secondChange')">
+                <div class="barContent">
+                    <p><i class="icon-clock"></i></p>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+
+            <div id="3" class="bar3" onmouseover="contentChange(3,'thirdChange')">
+                <div class="barContent">
+                    <p><i class="icon-mail-alt"></i></p>
+
+                </div>
+            </div>
+            <div id="4" onmouseover="contentChange(4,'fourthChange')" class="bar4">
+                <div class="barContent">
+                    <p><i class="icon-phone"></i></p>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="rightElement">
+            <h2 style="text-shadow: 2px 2px grey;">O mnie</h2>
+            <span>
+                Pracuje w brażny od ponad dziesięciu lat. W swojej karierze miałem doczynienia z wieloma projektami
+                z zakresu planowania i dekorowania przestrzeni zamkniętych. Projektowanie wnętrz pomieszczeń z pewnością mogę nazwać swoją pasją.
+                W wolnych chwilach gram w piłkę nożną. W F.H.U. PANELEO pracuję od czterech lat.
+            </span>
+            <div class="aboutBar" onclick="checker()" id="aboutPlace">
+                <h1>Galeria</h1>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div id="main" class="mainCont"></div>  
+    
+    
+          
+    @Html.Partial("_preFooter")
+    @Html.Partial("_footer")
+    
+
+
+      
+ 
+</body>
+</html>

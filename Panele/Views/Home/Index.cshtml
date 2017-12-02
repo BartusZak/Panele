@@ -1,0 +1,284 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>F.H.U. PANELEO</title>
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+    <link href="~/Content/MainStyles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var idPhoto = 1; // losuje liczbe od 1 do 5
+        function hide() {
+            $("#place").fadeOut(500);
+        }
+        function changePhoto() {
+            idPhoto++; if (idPhoto > 4) idPhoto = 1;
+            var file = document.getElementById("slide" + idPhoto).innerHTML;
+            document.getElementById("place").innerHTML = file;
+            $("#place").fadeIn(500);
+            setTimeout("changePhoto()", 5000);
+            setTimeout("hide()", 4500);
+        }
+    </script>
+
+    
+    <script src="~/Scripts/slider.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+</head>
+<body onload="changePhoto(), starts()">
+    <div id="container">
+        @Html.Partial("_navBar")
+        <div id="content">
+    
+           <div class="advies">
+               
+               <div id="advise1">
+                   <div id="place" class="annotation"></div>
+                   <div style="visibility: hidden;" id="slide1" class="annotation">
+                           <h1>Skontaktuj się z nami</h1>
+                           <span class="kapits">Jesteśmy</span> na rynku już prawie dziesięć lat! Mamy w swojej ofercie bogaty zestaw akcesoriów budowlanych.
+                           Wysokie rabaty, dbałość o każdy detal oraz wykwalifikowane grono ekskertów, pozwolą Ci wybrać takie meble jakich
+                           potrzebujesz.
+                           <p><span>Kontakt ></span></p>
+
+                   </div>
+                   <div style="visibility: hidden;" id="slide2" class="annotation">
+                       <h1>Nasza siedziba</h1>
+                       <span class="kapits">Nasz</span> sklep znajduje się na ul. Przemysłowej w miasteczku turystycznym Giżycko.
+                       Posiadamy stałe grono miejscowych klientów, w którym każdy z nich z pewnością nas poleci.
+                       <p><span>Sprawdź ></span></p>
+                   </div>
+                   <div style="visibility: hidden;" id="slide3" class="annotation">
+                       <h1>Dowóz u nas?</h1>
+                       <span class="kapits">Dowóz</span> zamówienia to żaden problem w PANELEO. Wystarczy złożyć zamówienie
+                       powyżej kwoty 200 zł, a dostarczenie towaru będzie zupełnie darmowe.
+                       <p><span>Więcej informacji ></span></p>
+                   </div>
+                   <div style="visibility: hidden;" id="slide4" class="annotation">
+                       <h1>O nas</h1>
+                       <span class="kapits">W</span> naszej firmie wszelkie zamówienia są wykonywane z pasją. Klienci i ich zadowolenie
+                       są naszym priorytetem. 
+                       <p><span>O nas ></span></p>
+                   </div>
+               </div>
+               <div id="advise2">
+                   <div style="margin-top: 100px;" class="annotation">
+                       <div class="backgrounds" style="height: 200px;">
+                           <h4><span>Skorzystaj z promocji!</span></h4>
+                           <span>Pamiętaj </span>, że możesz skorzystać z kuponów rabatowych, które możesz uzyskać po wypełnieniu
+                           odpowiedniej ankiety!
+      
+                       </div>
+                    </div>
+           </div>  
+          
+            <div style="clear: both;"></div>
+        </div>
+
+       <div class="advforYou">
+            <h2>Rekomendacje dla Ciebie</h2>
+           <div class="advforYouContainer">
+               <ul>
+                   <li>Wiertarka</li>
+                   <li>Wiertarka</li>
+                   <li>Wiertarka</li>
+                   <li>Wiertarka</li>
+                   <li>Wiertarka</li>
+                 
+               </ul>
+           </div>
+           
+       </div>
+
+            <div class="advforYou">
+                <h2>Szczególnie polecamy</h2>
+                <div class="advforYouContainer">
+                    <ul>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+
+                    </ul>
+                </div>
+
+            </div>
+ 
+            <div class="bigAdv">
+                <div class="annotation">
+                    <div style="width:400px; height: 340px; margin-left: 800px;" class="backgrounds">
+                        <h4><span>Skorzystaj z pomocy eksperta</span></h4>
+                        <span>Każdy</span> z nas marząc o nowej łazience zastanawia się od czego zacząć. Pomożemy
+                        rozwiązać ten odwieczny problem. Wystarczy skorzystać z pomocy naszego pracownika. Nasz eskpert pomorze
+                        państu dobrać wszystkie potrzebne elementy oraz meble.
+                         <p><span>Informacje ></span></p>
+                       
+                    </div>
+
+                </div>
+
+                <div id="classCont">
+                    <div style="background-image: url('../../Content/image_2100 (2).jpg');" class="brotherAdv backgrounds">
+                        <div class="backgrounds" style="height: 270px;">
+                            <h4><span>Sypialnia</span></h4>
+                            <span>Nie</span> ma nic lepszego jak dobry sen zwłaszcza z ukochaną osobą obok. Wygodne łóżko, ciepła i dobrej jakości oraz
+                            miękka poduszka. Wszystkie produkty związane ze snem znajdziesz właśnie tutaj. <br/><br/>
+                            <p><span>Sypialnia ></span></p>
+                        </div>
+
+                    </div>
+                    <div style="margin-left: 30px; background-image: url('../../Content/image_2100 (1).jpg');" class="brotherAdv backgrounds">
+                     
+                        <div class="backgrounds" style="height: 270px;">
+                            <h4><span>Salon marzeń</span></h4>
+                            <span>Wiesz</span> co to salon marzeń? Naszym zdaniem to taki, w którym otacza Cię wszystko co kochasz.
+                            Pozwól nam wybrać zestaw mebli idealnych dla Ciebie i twojej rodziny. Nie ma nic lepszego niż oglądanie ulubionego
+                            filmu w towrzystwie wspaniałych przedmiotów.
+                            
+                            <p><span>Twój salon marzeń ></span></p>
+                        </div>
+                       
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                
+                
+            </div>
+
+            <div  style="clear: both;"></div>
+
+            <div id="subMenu">
+                <div id="secondNavBar">
+                    <p style="margin-top: 10px; float: left;">Specjalne ceny na wybrane produkty!</p>
+                    <p style="margin-top: 10px; float: left; margin-left: 500px;">Znajdź</p> 
+                    @Html.TextBox("elo")
+                    <div style="clear: both;"></div>
+                </div>
+                <div id="leftItemSM">
+                        <ul>
+                            <li onclick="show(0)"  >Kuchnie</li>
+                            <li onclick="show(1)" >Łazienki</li>
+                            <li onclick="show(2)" >Pokoje</li>
+                            <li onclick="show(3)" >Salony</li>
+                        </ul>
+                </div>
+            
+
+                <div id="holderContainer">
+                    <div id="placeForItems"></div>
+
+                    <div id="slideCont" style="display: none;">
+                        <div class="leftPhoto" style="background-image: url('../../Content/Pictures/pomieszcz3.jpg'); width: 1130px;">
+                            <div class="backgrounds1">
+                                <h4><span>Nie pozwój na to</span></h4>
+                                <span>Nie</span> możesz pozwolić, aby twoje pomieszczenia w domu wyglądały dokładnie tak jak na tym zdjęciu. Skorzystaj z pomocy fachowców.
+
+                                <p><span>Pomoc ></span></p>
+                            </div>
+                        </div>
+
+                        <div id="slideCont0" style="display: none;">
+                            <div class="leftPhoto" style="background-image: url('../../Content/Pictures/kuchnia1.jpg'); width: 1130px;">
+                                <div class="backgrounds1">
+                                    <h4><span>Piękno w prostocie</span></h4>
+                                    <span>Wiesz</span>, że kluczem do tego, aby obiad powstał w szybki i łatwy sposób, jest dobrze zaplanowana kuchnia?
+                                    Dobry stół i aneks kuchenny to podstawa do tego, aby prawdziwy szef kuchni, miał gdzie gotować dla najbliższych.
+
+                                    <p><span>Sprawdź ></span></p>
+                                </div>
+                            </div>
+
+
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+
+                        <div id="slideCont1" style="display: none;">
+                            <div class="leftPhoto" style="background-image: url('../../Content/laziena.jpg');">
+                                <div class="backgrounds1">
+                                    <h4><span>Idealna łazienka</span></h4>
+                                    <span>Niektórzy</span> z nas są tak zapracowani, że jedyną przyjemnością może być długą kąpiel na koniec dnia.
+                                    Pomożemy Ci skompletować akcesoria oraz meble.
+                                    <p><span>Uzyskaj pomoc ></span></p>
+                                </div>
+                            </div>
+
+                            <div class="rightPhoto" style="background-image: url('../../Content/Pictures/lazienka1.jpg');">
+                                <div class="backgrounds2">
+                                    <h4><span>Akcesoria</span></h4>
+                                    <span>Posiadamy</span> w ofercie ogromną ilość produktów związanych z oświetleniem pomieszczeń łazienkowych.
+                                    Nie trzeba wiele, aby sprawić by oświetlenie pomieszczenia było przyjemne dla oczu.
+
+                                    <p><span>Przejrzyj ofertę ></span></p>
+                                </div>
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+
+                        <div id="slideCont2" style="display: none;">
+                            <div class="leftPhoto" style="background-image: url('../../Content/Pictures/pokoj1.jpg');">
+                                <div class="backgrounds1">
+                                    <h4><span>Piekny pokój</span></h4>
+                                    <span>Pokój</span> w każdym domu to pomieszczenie startowe. To tutaj spędzamy wspaniałe chwile z naszymi bliskimi. Według naszych eskpertów, prawdziwy pokój
+                                    to taki, w którym upływ czasu nie jest ważny. Pomożemy dobrać Ci meble w taki sposób, aby rezultat końcowy był zadawalający.
+                                    <p><span>Uzyskaj pomoc ></span></p>
+                                </div>
+                            </div>
+
+                            <div class="rightPhoto" style="background-image: url('../../Content/Pictures/pokoj2.jpg');">
+                                <div class="backgrounds2">
+                                    <h4><span>Pokoje osobowe</span></h4>
+                                    <span>Każdy</span> z na chciałby mieć swoje ulubione miejsce, w którym spędzanie czasu z samym sobą sprawia przyjemność.
+                                    Posiadamy szereg produktów związanych z wyposażaniem i umeblowaniem pokoi.
+
+                                    <p><span>Przejrzyj ofertę ></span></p>
+                                </div>
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+
+
+
+
+
+                        <div id="slideCont3" style="display: none;">
+                            <div class="leftPhoto" style="background-image: url('../../Content/Pictures/ogrod2.jpg'); width: 1130px;">
+                                <div class="backgrounds1">
+                                    <h4><span>Kolorowy ogród</span></h4>
+                                    <span>Ogród</span> to miejsce na świerzym powietrzu, w który człowiek odpoczywa od codziennych problemów. Dobre meble oraz akcesoria ogrodowe wzmocnią doznania.
+
+                                    <p><span>Sprawdź ofertę ></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+
+
+
+
+
+
+                    </div>
+               
+
+            </div>
+
+
+
+          
+    </div>
+        @Html.Partial("_preFooter")
+        @Html.Partial("_footer")
+    </div>
+        </div>
+</body>
+</html>
