@@ -45,10 +45,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -167,21 +167,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711231607153_Initial.cs" />
-    <Compile Include="Migrations\201711231607153_Initial.Designer.cs">
-      <DependentUpon>201711231607153_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711231611238_Initial2.cs" />
-    <Compile Include="Migrations\201711231611238_Initial2.Designer.cs">
-      <DependentUpon>201711231611238_Initial2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711231704295_NewVALUES.cs" />
-    <Compile Include="Migrations\201711231704295_NewVALUES.Designer.cs">
-      <DependentUpon>201711231704295_NewVALUES.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711291022452_dbFree.cs" />
-    <Compile Include="Migrations\201711291022452_dbFree.Designer.cs">
-      <DependentUpon>201711291022452_dbFree.cs</DependentUpon>
+    <Compile Include="Migrations\201712021257124_test.cs" />
+    <Compile Include="Migrations\201712021257124_test.Designer.cs">
+      <DependentUpon>201712021257124_test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
@@ -225,17 +213,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711231607153_Initial.resx">
-      <DependentUpon>201711231607153_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711231611238_Initial2.resx">
-      <DependentUpon>201711231611238_Initial2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711231704295_NewVALUES.resx">
-      <DependentUpon>201711231704295_NewVALUES.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711291022452_dbFree.resx">
-      <DependentUpon>201711291022452_dbFree.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712021257124_test.resx">
+      <DependentUpon>201712021257124_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
