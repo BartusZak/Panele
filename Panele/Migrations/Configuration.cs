@@ -63,10 +63,10 @@ namespace Panele.Migrations
              new Product(12, "Stó³ wielki", "Kinewood", 365.99, DateTime.Now, "Posiadany", "Salon", 3.4, 23, 32, 34, 32, 34, "Niebieski", "sadsadasd" +
              "asdsadsadadd" +
              "asadadsadadsadsadsadsadadsadaddadadadsadsadsadasdsadad", "Polietylen"),
-             new Product(13, "Biórko ma³e", "Kinewood", 365.99, DateTime.Now, "Posiadany", "Salon", 3.4, 23, 32, 34, 32, 34, "Niebieski", "sadsadasd" +
+             new Product(13, "Biurko ma³e", "Kinewood", 365.99, DateTime.Now, "Posiadany", "Salon", 3.4, 23, 32, 34, 32, 34, "Niebieski", "sadsadasd" +
              "asdsadsadadd" +
              "asadadsadadsadsadsadsadadsadaddadadadsadsadsadasdsadad", "Polietylen"),
-             new Product(14, "Biórko œrednie", "Kinewood", 365.99, DateTime.Now, "Posiadany", "Salon", 3.4, 23, 32, 34, 32, 34, "Niebieski", "sadsadasd" +
+             new Product(14, "Biurko œrednie", "Kinewood", 365.99, DateTime.Now, "Posiadany", "Salon", 3.4, 23, 32, 34, 32, 34, "Niebieski", "sadsadasd" +
              "asdsadsadadd" +
              "asadadsadadsadsadsadsadadsadaddadadadsadsadsadasdsadad", "Polietylen"),
              new Product(15, "Fotel du¿y", "Kinewood", 365.99, DateTime.Now, "Posiadany", "Salon", 3.4, 23, 32, 34, 32, 34, "Niebieski", "sadsadasd" +
