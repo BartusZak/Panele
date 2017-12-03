@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using Panele.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -32,8 +36,31 @@ namespace Panele.Controllers
 		{
 			return View();
 		}
-		public ViewResult LogIn()
+		[HttpGet]
+		public ViewResult LogIn(string returnUrl)
 		{
+			ViewBag.returnUrl = returnUrl;
+			return View();
+		}
+		[HttpPost]
+		public ActionResult LogIn(LogInViewModel model)
+		{
+			if (ModelState.IsValid)
+			{
+			}
+			return View();
+		}
+		[HttpGet]
+		public ViewResult Register()
+		{
+			return View();
+		}
+		[HttpPost]
+		public ViewResult Register(RegisterViewModel model)
+		{
+			if(ModelState.IsValid)
+			{
+			}
 			return View();
 		}
 	}

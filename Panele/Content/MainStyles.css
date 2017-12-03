@@ -1,7 +1,10 @@
 ﻿body {
     margin: 0px;
     font-family: 'Lato', sans-serif;
-    background-color: #F5F5F5;
+    /*background-color: #F5F5F5;*/
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 #navBar {
     background-color: #ff7e21;
@@ -351,7 +354,7 @@ color: #ff7e21;
 
 .contentOfnextPages {
     padding: 20px;
-    width: 1240px;
+    width: 65%;
     margin-left: auto;
     margin-right: auto;
    
