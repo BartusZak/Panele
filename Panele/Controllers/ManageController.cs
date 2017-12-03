@@ -8,6 +8,7 @@ using Panele.DAL;
 using System.Data.Entity;
 using System.Net;
 using System.Data;
+using PagedList;
 
 namespace Panele.Controllers
 {
@@ -20,9 +21,9 @@ namespace Panele.Controllers
             _context = new ShopContext();
         }
      
-        public ActionResult Index(string sortBy, string searchString)
+        public ActionResult Index(string sortBy, string currentFilter, string searchString, int? page)
         {
-
+            ViewBag.CurrentSort = sortBy;
             ViewBag.byName = String.IsNullOrEmpty(sortBy) ? "name" : "";
             ViewBag.byCompany = String.IsNullOrEmpty(sortBy) ? "comp" : "";
             ViewBag.byCost = sortBy == "High" ? "high" : "High";
@@ -31,7 +32,15 @@ namespace Panele.Controllers
             ViewBag.byType = sortBy == "Type" ? "type" : "Type";
             ViewBag.byMaterial = sortBy == "Material" ? "material" : "Material";
 
-            
+            if(searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
             var productList = from p in _context.Products
                            select p;
 
@@ -79,11 +88,13 @@ namespace Panele.Controllers
                     productList = productList.OrderBy(p => p.Material);
                     break;
                 default:
-                    
+                    productList = productList.OrderBy(p => p.Id);
                     break;
             }
+            int pageSize = 15;
+            int numberPage = (page ?? 1);
+            return View(productList.ToPagedList(numberPage, pageSize));
             
-            return View(productList.ToList());
         }
        
         public ActionResult Details(int? id)
