@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Zarządzanie zawartością strony</title>
     <link href="~/Content/ManageStyles.css" rel="stylesheet" />
-
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Scripts/listChecker.js"></script>
 </head>
 <body>
@@ -38,10 +38,11 @@
                   <label>Wyszukaj we wszystkich kategoriach</label>
                   @using (Html.BeginForm())
                   {
-                      <button style="margin-top: 15px; margin-left: 30px;" id="first1" onclick="location.href='@Url.Action("Index")'">
+                      <button class="searchButton" style= id="first1" onclick="location.href='@Url.Action("Index")'">
                           <span>Znajdź</span>
                       </button>
-                          @Html.TextBox("searchString")
+                          @Html.TextBox("searchString",null,new { @class = "form-control textWidth" })
+                      <div style="clear: both;"></div>
 
                   }
               </div>

@@ -197,3 +197,29 @@
     border-radius: 5px;
     background-color: #f2f2f2;
 }
+#searchString{
+    width: 170px;
+    float: left;
+    margin-top: 3px;
+    margin-left: 25px;
+}
+.searchButton {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #4CAF50;
+    color: #fff;
+    width: 100px;
+    font-weight: bold;
+    margin-left: 15px;
+    background-color: #f4511e;
+    float: left;
+    border: none;
+    border-radius: 15px;
+}
+.searchButton:hover {
+    background-color: #3e8e41
+}
