@@ -22,20 +22,20 @@
 </head>
 <body>
     <div id="manageContainer">
-        <div id="leftPanel">
+        <div style="height: 1200px;" id="leftPanel">
             <span>MY ADMIN Interface</span>
             <ul>
 
-                <li>@Html.ActionLink("Dodaj produkt", "AddProduct", "Manage")</li>
-                <li>@Html.ActionLink("Usuń produkty", "Details", "Manage")</li>
-                <li>@Html.ActionLink("Strona główna", "Index", "Home")</li>
-                <li>@Html.ActionLink("Wyloguj", "EditDetails", "Manage")</li>
+                <li style="height: 70px;">@Html.ActionLink("Dodaj produkt", "AddProduct", "Manage")</li>
+                <li style="height: 70px;">@Html.ActionLink("Usuń produkty", "Details", "Manage")</li>
+                <li style="height: 70px;">@Html.ActionLink("Strona główna", "Index", "Home")</li>
+                <li style="height: 70px;">@Html.ActionLink("Wyloguj", "EditDetails", "Manage")</li>
 
             </ul>
         </div>
         <div id="rightPanel">
             <div id="infoDesk">
-              <div>
+              <div class="navbarElements">
                   <label>Wyszukaj we wszystkich kategoriach</label>
                   @using (Html.BeginForm())
                   {
@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div id="cont">
+        <div style="width: 100%;" id="cont">
             <table class="products">
                 <tr>
                     <th>Id</th>

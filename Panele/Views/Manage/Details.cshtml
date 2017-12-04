@@ -18,7 +18,7 @@
 
         
         <div id="manageContainer">
-            <div id="leftPanel">
+            <div style="height: 1300px;" id="leftPanel">
                 <span>MY ADMIN Interface</span>
                 <ul>
                     <li>@Html.ActionLink("Wylistuj produkty", "Index", "Manage")</li>
@@ -53,13 +53,13 @@
                 </div>
             </div>
 
-            <div id="cont">
+            <div  id="cont">
                 <h1>Szczegóły</h1>
                 <div id="up">
                     
                     <p>Krótki opis: <b>@Model.Description</b></p>
                 </div>
-                <div id="placeL">
+                <div  id="placeL">
                     <p>Identyfikator: <b>@Model.Id</b></p>
                     <p>Nazwa: <b>@Model.Name</b></p>
                     <p>Firma: <b>@Model.Company</b></p>
@@ -87,12 +87,12 @@
                     <p>Ocena użytkowników: <b>@Model.Rate</b></p>
                     <p>Materiał: <b>@Model.Material</b></p>
                     <p>Kolor: <b>@Model.Color</b></p>
-                    <button class="butt" onclick="location.href='@Url.Action("Index", "Manage")'" >
+                    <button style="margin-top: 40px;" class="butt" onclick="location.href='@Url.Action("Index", "Manage")'" >
                         <span>Wróć</span>
                     </button>
                  
                 </div>
-                <div id="placeR">
+                <div  id="placeR">
                     <img style="margin-top: 15px;" src="~/Content/adv 1.jpg" width="650" height="530" />
                     <p style="font-size: 32px;">
                         <i class="icon-star-empty"></i>
@@ -111,7 +111,7 @@
                 </div>
                 <div style="clear: both;"></div>
              
-                <p></p>
+              
              
             </div>
            

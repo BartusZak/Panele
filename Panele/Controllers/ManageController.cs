@@ -117,6 +117,12 @@ namespace Panele.Controllers
         [HttpPost]
         public ActionResult Create(Product product)
         {
+            if (!ModelState.IsValid)
+            {
+                var valProduct = new Product();
+                valProduct = product;
+                return View("AddProduct", product);
+            }
             var UpdateTime = DateTime.Now;
             product.AddDate = UpdateTime;
             _context.Products.Add(product);

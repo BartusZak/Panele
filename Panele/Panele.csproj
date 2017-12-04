@@ -210,6 +210,10 @@
     <Compile Include="Migrations\201712031638249_initial.Designer.cs">
       <DependentUpon>201712031638249_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712041141063_AddingVal.cs" />
+    <Compile Include="Migrations\201712041141063_AddingVal.Designer.cs">
+      <DependentUpon>201712041141063_AddingVal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -262,6 +266,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712031638249_initial.resx">
       <DependentUpon>201712031638249_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041141063_AddingVal.resx">
+      <DependentUpon>201712041141063_AddingVal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

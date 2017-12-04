@@ -2,10 +2,11 @@
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
 }
+
 #leftPanel {
     font-size: 20px;
     width: 14%;
-    height: 1520px;
+    height: 2000px;
     background-color: #3a3f51;
     color: white;
     float: left;
@@ -15,7 +16,7 @@
    color: aqua;
    margin-left: 10px;
 }
-    #leftPanel ul {
+#leftPanel ul {
         list-style: none;
         -webkit-padding-start: 0;
         margin-top: 80px;
@@ -24,7 +25,7 @@
     }
 #leftPanel ul > li {
     
-      height: 70px;
+      height: 35px;
       margin-bottom: 10px;
       padding: 20px;
       padding-left: 40px;
@@ -56,7 +57,7 @@
 }
 #infoDesk ul{
     list-style: none;
-    margin-left: 300px;
+    margin-left: 230px;
 }
 #infoDesk ul > li{
     display: inline-block;
@@ -75,7 +76,8 @@
     padding-left: 300px;
     padding-right: 40px;
     font-size: 20px;
-    height: 1237px;
+    width: 1400px;
+    height: 100%;
 }
 #FindCategory{
     height: 20px;
@@ -125,14 +127,14 @@
 #placeL{
     float: left;
     width: 510px;
-    height: 650px;
+    height: 800px;
     padding: 20px;
     margin-left: 40px;
 
 }
 #placeR {
     float: left;
-    width: 840px;
+    width: 760px;
     padding: 20px;
     text-align: center;
     height: 650px;
@@ -191,11 +193,13 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 .place {
-    width: 55%;
+    width: 60%;
     border-radius: 5px;
     background-color: #f2f2f2;
+
 }
 #searchString{
     width: 170px;
@@ -214,7 +218,7 @@
     color: #fff;
     width: 100px;
     font-weight: bold;
-    margin-left: 15px;
+    margin-left: 10px;
     background-color: #f4511e;
     float: left;
     border: none;
@@ -222,4 +226,20 @@
 }
 .searchButton:hover {
     background-color: #3e8e41
+}
+.navbarElements{
+    margin-left: 30px;
+    float: left;
+}
+#valMessage{
+   float: left;
+   margin-left: 1100px; 
+}
+.field-validation-error{
+    color: red;
+    margin-left: 20px;
+  
+}
+.input-validation-error{
+  border: 2px solid red !important;
 }

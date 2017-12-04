@@ -13,7 +13,7 @@
     <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+    <div id="maincont">
         <div id="manageContainer">
             <div id="leftPanel">
                 <span>MY ADMIN Interface</span>
@@ -34,10 +34,10 @@
                             <label>Rodzaj</label>
                         </li>
                         <li>
-                            <label>Data dodania</label>
+                            <label>Ostatnio dodane</label>
                         </li>
                         <li>
-                            <label>Cena</label>
+                            <label>Ostatnio zmieniane</label>
                         </li>
                         <li>
                             <label>Identyfikator</label>
@@ -48,66 +48,89 @@
                     </ul>
                 </div>
             </div>
-
+          
             <div id="cont">
+               
                 @using (Html.BeginForm("Create", "Manage"))
                 {
-                  <div class="place">
+                    <div class="place">
                         <p><b>Nazwa: </b></p>
                         @Html.TextBoxFor(m => m.Name, new { placeholder = "Miejsce na nazwę" })
+                      
+                            @Html.ValidationMessageFor(x => x.Name)
+                       
+                      
                     </div>
                     <div class="place">
                         <p><b>Firma: </b></p>
                         @Html.TextBoxFor(m => m.Company, new { placeholder = "Miejsce na nazwę firmy" })
+                       
+                        
+                            @Html.ValidationMessageFor(x => x.Company)
+                     
                     </div>
                     <div class="place">
                         <p><b>Cena: </b></p>
                         @Html.TextBoxFor(m => m.Cost, new { placeholder = "Miejscę na cenę" })
+                        @Html.ValidationMessageFor(x => x.Cost)
+                         
                     </div>
                     <div class="place">
                         <p><b>Stan: </b></p>
                         @Html.TextBoxFor(m => m.State, new { placeholder = "Informacja o stanie produktu" })
+                     
+                        @Html.ValidationMessageFor(x => x.State)
                     </div>
                     <div class="place">
                         <p><b>Rodzaj: </b></p>
                         @Html.TextBoxFor(m => m.Type, new { placeholder = "Przeznaczenie produktu" })
+                        @Html.ValidationMessageFor(x => x.Type)
                     </div>
                     <div class="place">
                         <p><b>Szerokość: </b></p>
                         @Html.TextBoxFor(m => m.Width, new { placeholder = "Szerokość w centymetrach" })
+                        @Html.ValidationMessageFor(x => x.Width)
                     </div>
                     <div class="place">
                         <p><b>Długość: </b></p>
                         @Html.TextBoxFor(m => m.Lenght, new { placeholder = "Długość w centymetrach" })
+                        @Html.ValidationMessageFor(x => x.Lenght)
                     </div>
                     <div class="place">
                         <p><b>Waga: </b></p>
                         @Html.TextBoxFor(m => m.Weight, new { placeholder = "Waga w kilogramach" })
+                        @Html.ValidationMessageFor(x => x.Weight)
                     </div>
                     <div class="place">
                         <p><b>Głębokość: </b></p>
                         @Html.TextBoxFor(m => m.Greg, new { placeholder = "Głębokość w centymetrach" })
+                        @Html.ValidationMessageFor(x => x.Greg)
                     </div>
                     <div class="place">
                         <p><b>Kolor: </b></p>
                         @Html.TextBoxFor(m => m.Color, new { placeholder = "Kolor produktu" })
+                        @Html.ValidationMessageFor(x => x.Color)
                     </div>
                     <div class="place">
                         <p><b>Materiał: </b></p>
                         @Html.TextBoxFor(m => m.Material, new { placeholder = "Materiał, z którego wykonany jest produkt" })
+                        @Html.ValidationMessageFor(x => x.Material)
                     </div>
                     <div class="place">
                         <p><b>Krótki opis: </b></p>
                         @Html.TextBoxFor(m => m.Description, new { placeholder = "Miejsce na opis" })
+                        @Html.ValidationMessageFor(x => x.Description)
                     </div>
                     
                         <button style="margin-left: 20px;" class="butt" onclick="location.href='@Url.Action("Create", "Manage")'">
                             <span>Stwórz</span>
                         </button>
+                      
                 }
                    
                 
             </div>
+           
            
             <div style="clear: both;"></div>
 
