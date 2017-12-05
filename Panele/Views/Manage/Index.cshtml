@@ -50,13 +50,12 @@
                     <div class="holder">
 
                        <div style="margin-left: 20px;">
-                           <span onclick="showList()"  href="#">Ostatnio dodane</span>
-                           <div id="contForCheck">
+                           <span id="designElement" onclick="showList()">Ostatnio dodane</span>
+                           <div  id="contForCheck">
                                <ol id="listActive">
-
-                                   <li> @Html.ActionLink("Index", "Manage")</li>
-                                   <li> @Html.ActionLink("Index", "Manage")</li>
-                                   <li> @Html.ActionLink("Index", "Manage")</li>
+                                   <li> @Html.ActionLink("Dodane wczoraj", "LastAdd", new { showDataType = 1 })</li>
+                                   <li> @Html.ActionLink("W tym miesiącu", "LastAdd", new { showDataType = 2 })</li>
+                                   <li> @Html.ActionLink("Data", "LastAdd", new { showDataType = 3 })</li>
                                </ol>
 
                            </div>

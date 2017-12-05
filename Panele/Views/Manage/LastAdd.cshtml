@@ -1,0 +1,133 @@
+﻿@model Panele.ViewModels.SendingLastAddedRecordsViewModel
+@{
+    ViewBag.Title = "LastAdd";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@{ 
+    var licznik = 1;
+}
+@if (ViewBag.dataType == 1)
+{
+
+    <table class="products">
+        <tr>
+            <th>Id</th>
+            <th>@Html.ActionLink("Nazwa", "LastAdd", new { sortBy = ViewBag.byName, showDataType = 1 })</th>
+            <th>@Html.ActionLink("Firma", "LastAdd", new { sortBy = ViewBag.byCompany, showDataType = 1 })</th>
+            <th>@Html.ActionLink("Cena", "LastAdd", new { sortBy = ViewBag.byCost, showDataType = 1 })</th>
+            <th>@Html.ActionLink("Data", "LastAdd", new { sortBy = ViewBag.byDate, showDataType = 1 })</th>
+            <th>@Html.ActionLink("Status", "LastAdd", new { sortBy = ViewBag.byState, showDataType = 1 })</th>
+            <th>@Html.ActionLink("Rodzaj", "LastAdd", new { sortBy = ViewBag.byType, showDataType = 1 })</th>
+            <th>@Html.ActionLink("Materiał", "LastAdd", new { sortBy = ViewBag.byMaterial, showDataType = 1 })</th>
+            <th>Opcje</th>
+        </tr>
+        @foreach (var element in Model.AddedyesterdayList)
+        {
+            licznik++;
+            if (licznik > 20)
+            {
+                licznik = 1;
+                break;
+            }
+            <tr>
+                <td>
+                    @element.Id
+                </td>
+                <td>
+                    @element.Name
+                </td>
+                <td>
+                    @element.Company
+                </td>
+                <td>
+                    @element.Cost
+                </td>
+                <td>
+                    @element.AddDate
+                </td>
+                <td>
+                    @element.State
+                </td>
+                <td>
+                    @element.Type
+                </td>
+                <td>
+                    @element.Material
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edytuj", "Edit", "Manage", new { id = element.Id }, null)
+                    @Html.ActionLink("Usuń", "Delete", "Manage", new { id = element.Id }, null)
+                    @Html.ActionLink("Szczegóły", "Details", "Manage", new { id = element.Id }, null)
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+
+}
+
+@if (ViewBag.dataType == 2)
+{
+
+    <table class="products">
+        <tr>
+            <th>Id</th>
+            <th>@Html.ActionLink("Nazwa", "LastAdd", new { sortBy = ViewBag.byName, showDataType = 2 })</th>
+            <th>@Html.ActionLink("Firma", "LastAdd", new { sortBy = ViewBag.byCompan, showDataType = 2 })</th>
+            <th>@Html.ActionLink("Cena", "LastAdd", new { sortBy = ViewBag.byCost, showDataType = 2 })</th>
+            <th>@Html.ActionLink("Data", "LastAdd", new { sortBy = ViewBag.byDate, showDataType = 2 })</th>
+            <th>@Html.ActionLink("Status", "LastAdd", new { sortBy = ViewBag.byState, showDataType = 2 })</th>
+            <th>@Html.ActionLink("Rodzaj", "LastAdd", new { sortBy = ViewBag.byType, showDataType = 2 })</th>
+            <th>@Html.ActionLink("Materiał", "LastAdd", new { sortBy = ViewBag.byMaterial, showDataType = 2 })</th>
+            <th>Opcje</th>
+        </tr>
+        @foreach (var element in Model.AddedMonthBefore)
+        {
+            licznik++;
+            if (licznik > 20)
+            {
+                licznik = 1;
+                break;
+            }
+            <tr>
+                <td>
+                    @element.Id
+                </td>
+                <td>
+                    @element.Name
+                </td>
+                <td>
+                    @element.Company
+                </td>
+                <td>
+                    @element.Cost
+                </td>
+                <td>
+                    @element.AddDate
+                </td>
+                <td>
+                    @element.State
+                </td>
+                <td>
+                    @element.Type
+                </td>
+                <td>
+                    @element.Material
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edytuj", "Edit", "Manage", new { id = element.Id }, null)
+                    @Html.ActionLink("Usuń", "Delete", "Manage", new { id = element.Id }, null)
+                    @Html.ActionLink("Szczegóły", "Details", "Manage", new { id = element.Id }, null)
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+
+}

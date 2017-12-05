@@ -53,7 +53,7 @@
             <div id="cont">
                 @using (Html.BeginForm("Update", "Manage"))
                 {
-                    @Html.ValidationSummary("Popełniłeś pewne błędy")
+                    @Html.ValidationSummary()
                     <div style="display: none;" class="place">
                         <p><b>Nazwa: </b></p>
                         @Html.TextBoxFor(m => m.Id, new { placeholder = "Miejsce na nazwę produktu" })

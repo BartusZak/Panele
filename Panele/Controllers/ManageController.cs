@@ -9,6 +9,7 @@ using System.Data.Entity;
 using System.Net;
 using System.Data;
 using PagedList;
+using Panele.ViewModels;
 
 namespace Panele.Controllers
 {
@@ -183,6 +184,91 @@ namespace Panele.Controllers
                 _context.Products.Remove(ProductinDb);
                 _context.SaveChanges();
             return RedirectToAction("Index", "Manage");
+        }
+        public ActionResult LastAdd(string sortBy, string searchString, int? showDataType)
+        {
+            ViewBag.dataType = showDataType;
+            ViewBag.byName = String.IsNullOrEmpty(sortBy) ? "name" : "";
+            ViewBag.byCompany = String.IsNullOrEmpty(sortBy) ? "comp" : "";
+            ViewBag.byCost = sortBy == "High" ? "high" : "High";
+            ViewBag.byDate = sortBy == "Date" ? "date" : "Date";
+            ViewBag.byState = sortBy == "State" ? "state" : "State";
+            ViewBag.byType = sortBy == "Type" ? "type" : "Type";
+            ViewBag.byMaterial = sortBy == "Material" ? "material" : "Material";
+
+           
+
+            
+            var viewModel = new SendingLastAddedRecordsViewModel();
+            DateTime AddedYesterday = new DateTime(DateTime.Today.Year, DateTime.Today.Day-1 != 0 ? DateTime.Today.Day-1 : DateTime.Today.Day,
+                DateTime.Today.Month, DateTime.Today.Hour, DateTime.Today.Minute, DateTime.Today.Second);
+
+         
+
+          
+            var productList = from p in _context.Products
+                              select p;
+
+
+            switch (sortBy)
+            {
+                case "name":
+                    productList = productList.OrderByDescending(p => p.Name);
+                    break;
+                case "comp":
+                    productList = productList.OrderByDescending(p => p.Company);
+                    break;
+                case "High":
+                    productList = productList.OrderBy(p => p.Cost);
+                    break;
+                case "high":
+                    productList = productList.OrderByDescending(p => p.Cost);
+                    break;
+                case "Date":
+                    productList = productList.OrderBy(p => p.AddDate);
+                    break;
+                case "date":
+                    productList = productList.OrderByDescending(p => p.AddDate);
+                    break;
+                case "State":
+                    productList = productList.OrderByDescending(p => p.State);
+                    break;
+                case "state":
+                    productList = productList.OrderBy(p => p.State);
+                    break;
+                case "Type":
+                    productList = productList.OrderByDescending(p => p.Type);
+                    break;
+                case "type":
+                    productList = productList.OrderBy(p => p.Type);
+                    break;
+                case "Material":
+                    productList = productList.OrderByDescending(p => p.Material);
+                    break;
+                case "material":
+                    productList = productList.OrderBy(p => p.Material);
+                    break;
+                default:
+                    productList = productList.OrderByDescending(p => p.AddDate);
+                    break;
+            }
+
+
+
+
+            //productList = productList.Where(p => p.Id.ToString().Contains(searchString)
+            // || p.Name.Contains(searchString) || p.State.Contains(searchString) || p.Material.Contains(searchString));
+            if (productList != null)
+            {
+
+                productList = productList.Where(p => p.AddDate > AddedYesterday & p.AddDate <= DateTime.Now);
+                viewModel.AddedyesterdayList = productList;
+                productList = productList.Where(p => p.AddDate.Month == DateTime.Now.Month);
+                viewModel.AddedMonthBefore = productList;
+
+            }
+            
+            return View(viewModel);
         }
       
       

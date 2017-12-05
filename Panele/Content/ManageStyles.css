@@ -254,19 +254,13 @@
 }
 .holder{
     float: left;
-    margin-top: 12px;
+    margin-top: 5px;
 }
-.holder ul{
-    float: left;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+
 .navElement{
     float: left;
     font-size: 22px;
-    margin-top: 15px;
+    margin-top: 12px;
 }
 .navElement:hover{
     cursor: pointer;
@@ -274,19 +268,19 @@
 .holder span {
     text-decoration: none;
     color: azure;
-    font-size: 24px;
+    font-size: 23px;
     display: block;
     width: 246px;
     text-align: center;
     height: 60px;
     padding: 10px 0;
-  
 }
+
 .holder span:hover {
     text-decoration: none;
     color: aqua;
     cursor: pointer;
-      border: 2px dotted #FFF;
+    border: 2px dotted #FFF;
 }
 
 
@@ -308,6 +302,7 @@
     display: block;
     height: 60px;
     padding: 10px 0;
+      transition: 0.5s;
 }
 .holder ol > li > a {
     text-decoration: none;
@@ -316,6 +311,7 @@
     display: block;
    
 }
+
 .holder ol > li:hover
 {
     background-color: #4b4f62;
