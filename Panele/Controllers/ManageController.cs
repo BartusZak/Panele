@@ -114,7 +114,9 @@ namespace Panele.Controllers
         {
             return View();
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Product product)
         {
             if (!ModelState.IsValid)
@@ -129,6 +131,8 @@ namespace Panele.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index","Manage");
         }
+       
+    
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -143,8 +147,15 @@ namespace Panele.Controllers
             return View(product);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Update(Product product)
         {
+            if (!ModelState.IsValid)
+            {
+                var valProduct = new Product();
+                valProduct = product;
+                return View("Edit", product);
+            }
             var UpdateTime = DateTime.Now;
             var productionDB = _context.Products.Single(x => x.Id == product.Id);
             productionDB.Name = product.Name;

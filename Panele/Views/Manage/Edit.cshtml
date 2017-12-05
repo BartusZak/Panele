@@ -53,6 +53,7 @@
             <div id="cont">
                 @using (Html.BeginForm("Update", "Manage"))
                 {
+                    @Html.ValidationSummary("Popełniłeś pewne błędy")
                     <div style="display: none;" class="place">
                         <p><b>Nazwa: </b></p>
                         @Html.TextBoxFor(m => m.Id, new { placeholder = "Miejsce na nazwę produktu" })
@@ -105,7 +106,7 @@
                         <p><b>Krótki opis: </b></p>
                         @Html.TextBoxFor(m => m.Description, new { placeholder = "Miejsce na opis" })
                     </div>
-
+                    @Html.AntiForgeryToken()
                     <button style="margin-left: 20px;" class="butt" onclick="location.href='@Url.Action("Update", "Manage")'">
                         <span>Zapisz</span>
                     </button>

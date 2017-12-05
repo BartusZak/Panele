@@ -121,7 +121,7 @@
                         @Html.TextBoxFor(m => m.Description, new { placeholder = "Miejsce na opis" })
                         @Html.ValidationMessageFor(x => x.Description)
                     </div>
-                    
+                    @Html.AntiForgeryToken()
                         <button style="margin-left: 20px;" class="butt" onclick="location.href='@Url.Action("Create", "Manage")'">
                             <span>Stwórz</span>
                         </button>
