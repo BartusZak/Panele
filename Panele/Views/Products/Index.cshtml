@@ -49,11 +49,11 @@
                         </div>
                         <div class="rate">
                             <p>
-                                <i class="icon-star-empty"></i>
-                                <i class="icon-star-empty"></i>
-                                <i class="icon-star-empty"></i>
-                                <i class="icon-star-empty"></i>
-                                <i class="icon-star-empty"></i>
+                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 1 })'"  class="icon-star-empty"></i>
+                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 2 })'"  class="icon-star-empty"></i>
+                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 3 })'"  class="icon-star-empty"></i>
+                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 4 })'"  class="icon-star-empty"></i>
+                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 5 })'"  class="icon-star-empty"></i>
                             </p>
                         </div>
                         <div class="imgContent">

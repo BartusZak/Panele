@@ -14,6 +14,7 @@ namespace Panele.Migrations
 
         protected override void Seed(Panele.DAL.ShopContext context)
         {
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -26,6 +27,7 @@ namespace Panele.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.RateValues.AddOrUpdate(x => x.Id, new RateValue(1,0,0,0,0,0,50));
             context.Products.AddOrUpdate(x => x.Id,
              new Product(1, "Fote", "Kinewood", 365.99, DateTime.Now, "Posiadany","Salon",3.4,23,32,34,32,34,"Niebieski","sadsadasd" +
              "asdsadsadadd" +

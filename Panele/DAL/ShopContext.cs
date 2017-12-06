@@ -14,5 +14,6 @@ namespace Panele.DAL
     {
         public ShopContext() : base("ShopContext") { }
         public DbSet<Product> Products { get; set; }
+        public DbSet<RateValue> RateValues { get; set; }
     }
 }

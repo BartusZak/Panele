@@ -55,17 +55,29 @@
                                <ol id="listActive">
                                    <li> @Html.ActionLink("24 godziny", "LastAdd", new { showDataType = 1 })</li>
                                    <li> @Html.ActionLink("W tym miesiącu", "LastAdd", new { showDataType = 2 })</li>
+                                   <li> @Html.ActionLink("Ostatnio dodany", "LastFromDb", "Manage")</li>
                             
                                </ol>
 
                            </div>
+                         
                           
                        </div>
+                      
                      
 
                         
                     </div>
-                   
+                    <button style="margin-left:0 ;" class="navbutt" onclick="location.href='@Url.Action("Searcher", "Manage")'">
+                        <span>Wyszukiwarka</span>
+                    </button>
+                    <button class="navbutt" onclick="location.href='@Url.Action("Searcher", "Manage")'">
+                        <span>Wyświetl listę zmian</span>
+                    </button>
+                
+                    <button class="navbutt" onclick="location.href='@Url.Action("Searcher", "Manage")'">
+                        <span>Najwyżej oceniane</span>
+                    </button>
 
                     <div style="clear: both;"></div>  
                   }

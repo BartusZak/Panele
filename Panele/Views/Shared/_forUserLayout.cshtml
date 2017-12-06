@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>F.H.U. PANELEO</title>
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+    <link href="~/Content/MainStyles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+</head>
+<body>
+    @Html.Partial("_navBar")
+    <div id="content">
+        @RenderBody()
+    </div>
+ 
+
+    @Html.Partial("_preFooter")
+    @Html.Partial("_footer")
+</body>
+</html>

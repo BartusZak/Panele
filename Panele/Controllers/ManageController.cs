@@ -187,6 +187,8 @@ namespace Panele.Controllers
         }
         public ActionResult LastAdd(string sortBy, string searchString, int? showDataType)
         {
+
+
             ViewBag.dataType = showDataType;
             ViewBag.byName = String.IsNullOrEmpty(sortBy) ? "name" : "";
             ViewBag.byCompany = String.IsNullOrEmpty(sortBy) ? "comp" : "";
@@ -196,9 +198,10 @@ namespace Panele.Controllers
             ViewBag.byType = sortBy == "Type" ? "type" : "Type";
             ViewBag.byMaterial = sortBy == "Material" ? "material" : "Material";
 
+
            
 
-            
+
             var viewModel = new SendingLastAddedRecordsViewModel();
            
          
@@ -274,8 +277,17 @@ namespace Panele.Controllers
            
             return View(viewModel);
         }
-      
-      
+
+        public ActionResult LastFromDb()
+        {
+            var product = _context.Products.ToList();
+            var last = product.Last();
+
+            return RedirectToAction("Details", new { id = product.Last().Id });
+        }
+
+
+
 
     } 
 }

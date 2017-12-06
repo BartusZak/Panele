@@ -94,5 +94,9 @@ namespace Panele.Models
         [Required]
         [Display(Name = "Materiał")]
         public string Material { get; set; }
+
+        [Display(Name = "Ocena użytkowników")]
+        public int numberOfVotes { get; set; }
+      
     }
 }
