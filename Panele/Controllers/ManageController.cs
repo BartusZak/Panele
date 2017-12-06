@@ -200,14 +200,13 @@ namespace Panele.Controllers
 
             
             var viewModel = new SendingLastAddedRecordsViewModel();
-            DateTime AddedYesterday = new DateTime(DateTime.Today.Year, DateTime.Today.Day-1 != 0 ? DateTime.Today.Day-1 : DateTime.Today.Day,
-                DateTime.Today.Month, DateTime.Today.Hour, DateTime.Today.Minute, DateTime.Today.Second);
-
+           
          
 
           
             var productList = from p in _context.Products
                               select p;
+            
 
 
             switch (sortBy)
@@ -260,14 +259,19 @@ namespace Panele.Controllers
             // || p.Name.Contains(searchString) || p.State.Contains(searchString) || p.Material.Contains(searchString));
             if (productList != null)
             {
-
-                productList = productList.Where(p => p.AddDate > AddedYesterday & p.AddDate <= DateTime.Now);
-                viewModel.AddedyesterdayList = productList;
-                productList = productList.Where(p => p.AddDate.Month == DateTime.Now.Month);
+                productList = productList.Where(p => p.AddDate.Month == DateTime.Now.Month & p.AddDate.Year == DateTime.Now.Year);
                 viewModel.AddedMonthBefore = productList;
 
+                
+
+
+                productList = productList.Where(p => p.AddDate.Day == DateTime.Now.Day & p.AddDate.Month == DateTime.Now.Month && p.AddDate.Year == DateTime.Now.Year);
+                viewModel.AddedyesterdayList = productList;
+
+               
+                
             }
-            
+           
             return View(viewModel);
         }
       
