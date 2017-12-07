@@ -33,9 +33,9 @@
                 </ul>
             </div>
             <div class="Content">
-             @foreach(var element in Model)
+             @foreach (var element in Model)
              {
-                 
+                <script>changeAllColors(@element.Rate)</script>
                     <div class="table">
 
                         <div class="title">
@@ -50,13 +50,9 @@
                             <p> <span style="margin: 0px;">Firma: </span> @element.Company</p>
                         </div>
                         <div class="rate">
-                            <p>
-                                <i id="first" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 1 })'"  class="icon-star-empty"></i>
-                                <i id="second" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 2 })'"  class="icon-star-empty"></i>
-                                <i id="third" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 3 })'"  class="icon-star-empty"></i>
-                                <i id="fourth" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 4 })'"  class="icon-star-empty"></i>
-                                <i id="five" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 5 })'"  class="icon-star-empty"></i>
-                            </p>
+                        
+         
+                            <p>Ocena: <span>@Math.Round(element.Rate, 2)</span></p>
                         </div>
 
                         <div class="imgContent">
@@ -72,7 +68,7 @@
                             <div style="clear: both;"></div>
                         </div>
                     </div>
-                    <script>changeAllColors(@element.Rate)</script>
+                    
              }
 
             </div>
