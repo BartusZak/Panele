@@ -1,5 +1,5 @@
 ﻿@using Panele.Models
-@model LogInViewModel
+@model RegisterViewModel
 @{
     Layout = null;
 }
@@ -26,12 +26,16 @@
             {
             @Html.ValidationSummary(false, "")
             <div class="formGroup">
-                <div class="formLabel">@Html.LabelFor(m => m.Login)</div>
-                @Html.TextBoxFor(m => m.Login)
+                <div class="formLabel">@Html.LabelFor(m => m.UserName)</div>
+                @Html.TextBoxFor(m => m.UserName)
             </div>
             <div class="formGroup">
                 <div class="formLabel">@Html.LabelFor(m => m.Password)</div>
                 @Html.PasswordFor(m => m.Password)
+            </div>
+            <div class="formGroup">
+                <div class="formLabel">@Html.LabelFor(m => m.ConfirmPassword)</div>
+                @Html.PasswordFor(m => m.ConfirmPassword)
             </div>
             <input type="submit" value="Załóż konto" id="submitBtn" />}
         </section>
