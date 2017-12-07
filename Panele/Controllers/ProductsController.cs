@@ -17,8 +17,6 @@ namespace Panele.Controllers
 		private ShopContext _context;
 		public ProductsController()
 		{
-
-
             _context = new ShopContext();
 		}
 		public ActionResult Index()

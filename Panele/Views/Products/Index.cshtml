@@ -14,6 +14,7 @@
     <link href="~/Content/MainStyles.css" rel="stylesheet" />
     <link href="~/Content/OfertStyles.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/Scripts/ChangingColor.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
 </head>
 <body>
@@ -34,6 +35,7 @@
             <div class="Content">
              @foreach(var element in Model)
              {
+                 
                     <div class="table">
 
                         <div class="title">
@@ -49,13 +51,14 @@
                         </div>
                         <div class="rate">
                             <p>
-                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 1 })'"  class="icon-star-empty"></i>
-                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 2 })'"  class="icon-star-empty"></i>
-                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 3 })'"  class="icon-star-empty"></i>
-                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 4 })'"  class="icon-star-empty"></i>
-                                <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 5 })'"  class="icon-star-empty"></i>
+                                <i id="first" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 1 })'"  class="icon-star-empty"></i>
+                                <i id="second" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 2 })'"  class="icon-star-empty"></i>
+                                <i id="third" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 3 })'"  class="icon-star-empty"></i>
+                                <i id="fourth" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 4 })'"  class="icon-star-empty"></i>
+                                <i id="five" onclick="location.href='@Url.Action("ChangeRate","Products", new { id = element.Id, voteRate = 5 })'"  class="icon-star-empty"></i>
                             </p>
                         </div>
+
                         <div class="imgContent">
                             <p><img src="~/Content/image.jpg" width="223" height="200" /></p>
                         </div>
@@ -69,7 +72,7 @@
                             <div style="clear: both;"></div>
                         </div>
                     </div>
-
+                    <script>changeAllColors(@element.Rate)</script>
              }
 
             </div>

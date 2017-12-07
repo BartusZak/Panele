@@ -3,6 +3,7 @@
     ViewBag.Title = "ChangeRate";
     Layout = "~/Views/Shared/_forUserLayout.cshtml";
 }
+<script src="~/Scripts/ChangingColor.js"></script>
 <style>
 .thForVoteLeft{
     float: left;
@@ -42,6 +43,10 @@
     margin-top: 20px;
       
 }
+.thForVoteRight i {
+    font-size: 40px;
+    font-weight: bold;
+}
 </style>
 
 <div class="thForVoteLeft">
@@ -51,8 +56,19 @@
 </div>
 <div class="thForVoteRight">
     <h3>Twoja ocena: <span>@Model.yourRate</span></h3>
-    <h3>Ocena po głosowaniu: <span>@Model.actualRate</span> </h3>
+    <h3>Ocena po głosowaniu: <span id="actualRate">@Model.actualRate</span> </h3>
     <h3>Liczba głosów: <span>@Model.numberOfVotes</span></h3>
+    <div style="margin-left: 100px;">
+        <i id="first"  class="icon-star-empty"></i>
+        <i id="second" class="icon-star-empty"></i>
+        <i id="third"  class="icon-star-empty"></i>
+        <i id="fourth" class="icon-star-empty"></i>
+        <i id="five"  class="icon-star-empty"></i>
+    </div>
+
+  
+ 
 </div>
+
 <div style="clear: both;"></div>
 
