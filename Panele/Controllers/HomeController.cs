@@ -13,8 +13,10 @@ namespace Panele.Controllers
 	public class HomeController : Controller
 	{
 		// GET: Home
-		public ActionResult Index()
+		public ActionResult Index(bool? afterSuccessfulRegister)
 		{
+			if(afterSuccessfulRegister == true) //musi byc == true bo typ nullowalny
+				ViewBag.justRegistered = "<script>alert('Pomyślnie zarejestrowano.')</script>";
 			return View();
 		}
 
@@ -56,12 +58,25 @@ namespace Panele.Controllers
 			return View();
 		}
 		[HttpPost]
-		public ViewResult Register(RegisterViewModel model)
+		public ActionResult Register(RegisterViewModel model)
 		{
-			if(ModelState.IsValid)
+			if (ModelState.IsValid)
 			{
+				ApplicationUser user;
+				ApplicationUserStore store = new ApplicationUserStore(new DAL.ShopContext());
+				ApplicationUserManager userManager = new ApplicationUserManager(store);
+				user = new ApplicationUser { UserName = model.UserName };
+				var result = userManager.Create(user, model.Password);
+				if (result.Succeeded)
+					return RedirectToAction("Index", "Home", new { afterSuccessfulRegister = true});
+				AddErrors(result);
 			}
-			return View();
+			return View(model);
+		}
+		private void AddErrors(IdentityResult result)
+		{
+			foreach (var error in result.Errors)
+				ModelState.AddModelError("", error);
 		}
 	}
 

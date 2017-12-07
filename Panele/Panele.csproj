@@ -208,10 +208,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712071009583_Delete.cs" />
-    <Compile Include="Migrations\201712071009583_Delete.Designer.cs">
-      <DependentUpon>201712071009583_Delete.cs</DependentUpon>
+    <Compile Include="Migrations\201712071353177_migracja.cs" />
+    <Compile Include="Migrations\201712071353177_migracja.Designer.cs">
+      <DependentUpon>201712071353177_migracja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\RateValue.cs" />
@@ -268,8 +269,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712071009583_Delete.resx">
-      <DependentUpon>201712071009583_Delete.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712071353177_migracja.resx">
+      <DependentUpon>201712071353177_migracja.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

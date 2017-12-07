@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using Panele.DAL;
+using Panele.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Panele.App_Start
+namespace Panele
 {
 	public class IdentityConfig
 	{
@@ -26,5 +27,18 @@ namespace Panele.App_Start
 				LoginPath = new PathString("/Home/Login"),
 			});
 		}
+	}
+	public class ApplicationUserStore : UserStore<ApplicationUser> //application w nazwach klas jest z tutoriala, potem mozna zmienic na Shop czy cos
+	{
+		public ApplicationUserStore(ShopContext context) :base(context)
+		{
+		}
+	}
+	public class ApplicationUserManager : UserManager<ApplicationUser>
+	{
+		public ApplicationUserManager(IUserStore<ApplicationUser> store) :base(store)
+		{
+		}
+
 	}
 }
