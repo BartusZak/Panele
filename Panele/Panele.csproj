@@ -231,6 +231,10 @@
     <Compile Include="Migrations\201712062049317_Del.Designer.cs">
       <DependentUpon>201712062049317_Del.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712070908158_Deleting.cs" />
+    <Compile Include="Migrations\201712070908158_Deleting.Designer.cs">
+      <DependentUpon>201712070908158_Deleting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\RateValue.cs" />
@@ -303,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712062049317_Del.resx">
       <DependentUpon>201712062049317_Del.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712070908158_Deleting.resx">
+      <DependentUpon>201712070908158_Deleting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

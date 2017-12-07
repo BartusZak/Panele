@@ -42,20 +42,63 @@ namespace Panele.Controllers
         {
           
             var selectedProduct = _context.Products.Find(id);
+            selectedProduct.numberOfVotes++;
             var RateValues = _context.RateValues.ToList();
-            bool check = _context.RateValues.Any(x => x.Id == id);
+            bool check = _context.RateValues.Any(x => x.ProductId == id);
 
-            ViewBag.data = check.ToString();
+            if(check == false)
+            {
+                RateValue NewAdded = new RateValue();
+                NewAdded.ProductId = id;
+                switch (voteRate)
+                {
+                    case 1:
+                        NewAdded.RateNumberOne++;
+                        break;
+                    case 2:
+                        NewAdded.RateNumberTwo++;
+                        break;
+                    case 3:
+                        NewAdded.RateNumberThree++;
+                        break;
+                    case 4:
+                        NewAdded.RateNumberFour++;
+                        break;
+                    case 5:
+                        NewAdded.RateNumberFive++;
+                        break;
+                }
+                _context.RateValues.Add(NewAdded);
+                _context.SaveChanges();
+            }
+            if (check == true)
+            {
+                var FindFrom = _context.RateValues.Single(x => x.ProductId == id);
+                switch (voteRate)
+                {
+                    case 1:
+                        FindFrom.RateNumberOne++;
+                        break;
+                    case 2:
+                        FindFrom.RateNumberTwo++;
+                        break;
+                    case 3:
+                        FindFrom.RateNumberThree++;
+                        break;
+                    case 4:
+                        FindFrom.RateNumberFour++;
+                        break;
+                    case 5:
+                        FindFrom.RateNumberFive++;
+                        break;
+                }
+                selectedProduct.Rate = RateChanger(selectedProduct.numberOfVotes, FindFrom.RateNumberOne, FindFrom.RateNumberTwo, FindFrom.RateNumberThree, FindFrom.RateNumberFour, FindFrom.RateNumberFive);
+                _context.SaveChanges();
+            }
 
-
-
-
-            
-
-          
             return View();
         }
-        private double RateChanger(int numberOfVotes, int UserVote, double R1, double R2, double R3, double R4, double R5)
+        private double RateChanger(int numberOfVotes, double R1, double R2, double R3, double R4, double R5)
         {
             if(numberOfVotes == 0)
             {
