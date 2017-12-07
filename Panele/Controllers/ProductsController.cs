@@ -75,7 +75,9 @@ namespace Panele.Controllers
                         break;
                 }
                 _context.RateValues.Add(NewAdded);
+                selectedProduct.Rate = RateChanger(selectedProduct.numberOfVotes, NewAdded.RateNumberOne, NewAdded.RateNumberTwo, NewAdded.RateNumberThree, NewAdded.RateNumberFour, NewAdded.RateNumberFive);
                 _context.SaveChanges();
+                Infos.actualRate = Math.Round(selectedProduct.Rate, 2);
             }
             if (check == true)
             {
@@ -98,19 +100,15 @@ namespace Panele.Controllers
                         FindFrom.RateNumberFive++;
                         break;
                 }
-                selectedProduct.Rate = RateChanger(selectedProduct.numberOfVotes, FindFrom.RateNumberOne, FindFrom.RateNumberTwo, FindFrom.RateNumberThree, FindFrom.RateNumberFour, FindFrom.RateNumberFive,voteRate);
+                selectedProduct.Rate = RateChanger(selectedProduct.numberOfVotes, FindFrom.RateNumberOne, FindFrom.RateNumberTwo, FindFrom.RateNumberThree, FindFrom.RateNumberFour, FindFrom.RateNumberFive);
                 _context.SaveChanges();
                 Infos.actualRate = Math.Round(selectedProduct.Rate, 2);
             }
             
             return View(Infos);
         }
-        private double RateChanger(int numberOfVotes, double R1, double R2, double R3, double R4, double R5, int voteRate)
+        private double RateChanger(int numberOfVotes, double R1, double R2, double R3, double R4, double R5)
         {
-            if(numberOfVotes == 0)
-            {
-                return Convert.ToDouble(voteRate);
-            }
             return Convert.ToDouble(((1*R1)+(2*R2)+(3*R3)+(4*R4)+(5*R5))/numberOfVotes);
         }
 	}
