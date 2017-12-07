@@ -6,16 +6,20 @@
 }
 #secondContainer{
     margin-top: 60px; 
+    
 }
 #leftPhoto {
-    width: 460px;
-    height: 530px;
+    width: 450px;
+    height: 600px;
     float: left;
     padding: 10px;
+    
+   
+
 }
 #leftPhoto img{
     border: 10px solid #e1e1e1; /*960*/
-    width: 440px;
+    width: 430px;
     height: 510px;
 }
 #leftPhoto img:hover{
@@ -24,17 +28,22 @@
 #rightAdnotations { /*800 */
     width: 740px;
     float: left;
-    height: 520px;
+    height: 600px;
     padding-left: 30px;
     padding-bottom: 30px;
     padding-right: 30px;
-    
+    border-width: 2px;
+    border: solid;
+    border-color: #dedede;
 }
 #leftCont {
     width: 300px;
     float: left;
-    height: 430px;
+    height: 580px;
     padding: 10px;
+   
+   
+
 }
 #company h3 {
     color: #ff7e21;
