@@ -159,13 +159,16 @@ namespace Panele.Controllers
             }
             var UpdateTime = DateTime.Now;
             var productionDB = _context.Products.Single(x => x.Id == product.Id);
+            var voteNumers = productionDB.numberOfVotes;
+            var actualRate = productionDB.Rate;
+            productionDB.numberOfVotes = voteNumers;
+            productionDB.Rate = actualRate;
             productionDB.Name = product.Name;
             productionDB.Company = product.Company;
             productionDB.Cost = product.Cost;
             productionDB.AddDate = UpdateTime;
             productionDB.State = product.State;
             productionDB.Type = product.Type;
-            productionDB.Rate = product.Rate;
             productionDB.Width = product.Width;
             productionDB.Lenght = product.Lenght;
             productionDB.Height = product.Height;

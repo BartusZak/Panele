@@ -484,6 +484,10 @@ color: #ff7e21;
     cursor: pointer;
     background-color: #dd4a21;
 }
+#informations p i:hover {
+    cursor: pointer;
+    color: #ff7e21;
+}
 .bar4 {
     margin-top: 40px;
     width: 200px;
