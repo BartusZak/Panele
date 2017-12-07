@@ -207,33 +207,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712031638249_initial.cs" />
-    <Compile Include="Migrations\201712031638249_initial.Designer.cs">
-      <DependentUpon>201712031638249_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712041141063_AddingVal.cs" />
-    <Compile Include="Migrations\201712041141063_AddingVal.Designer.cs">
-      <DependentUpon>201712041141063_AddingVal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061721409_AddingNewColumn.cs" />
-    <Compile Include="Migrations\201712061721409_AddingNewColumn.Designer.cs">
-      <DependentUpon>201712061721409_AddingNewColumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061808048_AddingNewTableRateVAlues.cs" />
-    <Compile Include="Migrations\201712061808048_AddingNewTableRateVAlues.Designer.cs">
-      <DependentUpon>201712061808048_AddingNewTableRateVAlues.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061958507_add.cs" />
-    <Compile Include="Migrations\201712061958507_add.Designer.cs">
-      <DependentUpon>201712061958507_add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712062049317_Del.cs" />
-    <Compile Include="Migrations\201712062049317_Del.Designer.cs">
-      <DependentUpon>201712062049317_Del.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712070908158_Deleting.cs" />
-    <Compile Include="Migrations\201712070908158_Deleting.Designer.cs">
-      <DependentUpon>201712070908158_Deleting.cs</DependentUpon>
+    <Compile Include="Migrations\201712071009583_Delete.cs" />
+    <Compile Include="Migrations\201712071009583_Delete.Designer.cs">
+      <DependentUpon>201712071009583_Delete.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
@@ -241,6 +217,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup1.cs" />
     <Compile Include="Users\AppUser.cs" />
+    <Compile Include="ViewModels\InformationAboutVotesViewModel.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\SendingLastAddedRecordsViewModel.cs" />
@@ -290,26 +267,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712031638249_initial.resx">
-      <DependentUpon>201712031638249_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712041141063_AddingVal.resx">
-      <DependentUpon>201712041141063_AddingVal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061721409_AddingNewColumn.resx">
-      <DependentUpon>201712061721409_AddingNewColumn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061808048_AddingNewTableRateVAlues.resx">
-      <DependentUpon>201712061808048_AddingNewTableRateVAlues.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061958507_add.resx">
-      <DependentUpon>201712061958507_add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712062049317_Del.resx">
-      <DependentUpon>201712062049317_Del.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712070908158_Deleting.resx">
-      <DependentUpon>201712070908158_Deleting.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712071009583_Delete.resx">
+      <DependentUpon>201712071009583_Delete.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

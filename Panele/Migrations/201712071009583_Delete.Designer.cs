@@ -7,13 +7,13 @@ namespace Panele.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Deleting : IMigrationMetadata
+    public sealed partial class Delete : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Deleting));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Delete));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712070908158_Deleting"; }
+            get { return "201712071009583_Delete"; }
         }
         
         string IMigrationMetadata.Source

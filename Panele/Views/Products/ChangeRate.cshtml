@@ -1,9 +1,58 @@
-﻿
+﻿@model Panele.ViewModels.InformationAboutVotesViewModel
 @{
     ViewBag.Title = "ChangeRate";
     Layout = "~/Views/Shared/_forUserLayout.cshtml";
 }
+<style>
+.thForVoteLeft{
+    float: left;
+    width: 580px;
+    padding: 10px;
+    text-align: justify;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    
+}
+.thForVoteLeft a{
+    text-decoration: none;
+    color: black;
+    width: 50px;
+}
+.thForVoteLeft a:hover{
+    padding-left: 10px;
+    color: #ff7e21;
+    font-weight: bold;
+}
+.thForVoteLeft span{
+   margin-left: 40px;
+}
+.thForVoteRight span{
+    color: orangered;
+}
+.thForVoteLeft span:hover{
+   cursor: initial;
+}
 
-<h2>PHANK YOU FOR YOUR VOTE</h2>
-@ViewBag.productRate
-@ViewBag.rate1
+.thForVoteRight{
+    float: right;
+    width: 580px;
+    padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    margin-top: 20px;
+      
+}
+</style>
+
+<div class="thForVoteLeft">
+    <h2>Dziękujemy Ci za oddany głos</h2>
+    <p><span>Pamiętaj</span>, że możesz wypełnić specjalną ankietę, która pozwoli nam zweryfikować twoją opinię na temat naszej firmy oraz wybranych przez Ciebie produktów.</p>
+    <p style="margin-left: 200px;">@Html.ActionLink("Wypełnij ankietę!","AddOpinion","Products")</p>
+</div>
+<div class="thForVoteRight">
+    <h3>Twoja ocena: <span>@Model.yourRate</span></h3>
+    <h3>Ocena po głosowaniu: <span>@Model.actualRate</span> </h3>
+    <h3>Liczba głosów: <span>@Model.numberOfVotes</span></h3>
+</div>
+<div style="clear: both;"></div>
+
