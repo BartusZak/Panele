@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Panele.Models.Product>
+﻿@model PagedList.IPagedList<Panele.Models.Product>
+@using PagedList.Mvc
 @{
     Layout = null;
 }
@@ -21,21 +22,42 @@
     <div>
         @Html.Partial("_navBar")
         <div class="Container">
-            <div class="SearchPanel">
-                <ul>
-                    <li>adsadadsa</li>
-                    <li>adsadadsa</li>
-                    <li>adsadadsa</li>
-                    <li>adsadadsa</li>
-                    <li>adsadadsa</li>
-                    <li>adsadadsa</li>
-                    <li>adsadadsa</li>
-                </ul>
+            <div style="width: 98%;" id="secondNavBar">
+                @using (Html.BeginForm())
+                {
+                    <button class="coolbutt" onclick="location.href='@Url.Action("Index")'">
+                        <span>Znajdź</span>
+                    </button>
+                    @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+                }
+               
+                <div style="clear: both;"></div>
             </div>
+            <div class="pagination-in-Offert" style="margin-top: 30px;">
+
+
+                @if (Model.PageCount <= 0)
+                {
+                    <p style="color: red; font-weight: bold; margin-left: 500px;">Przykro nam. Nie ma nic do wyświetlenia !</p>
+                }
+                else
+                {
+                    <p>
+                       
+
+                        @Html.PagedListPager(Model, page => Url.Action("Index",
+                            new { page }))
+                        Strona @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+
+                    </p>
+
+                }
+            </div>
+            
             <div class="Content">
-             @foreach (var element in Model)
-             {
-                <script>changeAllColors(@element.Rate)</script>
+                @foreach (var element in Model)
+                {
+                
                     <div class="table">
 
                         <div class="title">
@@ -50,8 +72,8 @@
                             <p> <span style="margin: 0px;">Firma: </span> @element.Company</p>
                         </div>
                         <div class="rate">
-                        
-         
+
+
                             <p>Ocena: <span>@Math.Round(element.Rate, 2)</span></p>
                         </div>
 
@@ -68,16 +90,15 @@
                             <div style="clear: both;"></div>
                         </div>
                     </div>
-                    
-             }
+
+                }
 
             </div>
+          
 
             <div style="clear: both;"></div>
         </div>
-
-
-        @Html.Partial("_preFooter")
+        @Html.Partial("_prefooter")
         @Html.Partial("_footer")
     </div>
 </body>

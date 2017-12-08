@@ -12,6 +12,7 @@
     <title>F.H.U. PANELEO</title>
     <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
     <link href="~/Content/MainStyles.css" rel="stylesheet" />
+   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         var idPhoto = 1; // Dodajem komentarz dla potwierdzenia ELO 1111
@@ -158,8 +159,14 @@
             <div id="subMenu">
                 <div id="secondNavBar">
                     <p style="margin-top: 10px; float: left;">Specjalne ceny na wybrane produkty!</p>
-                    <p style="margin-top: 10px; float: left; margin-left: 500px;">Znajdź</p> 
-                    @Html.TextBox("elo")
+                    @using (Html.BeginForm("Index", "Products"))
+                    {
+                        <button style="margin-left: 400px;" class="coolbutt" onclick="location.href='@Url.Action("Index","Products")'">
+                        <span>Znajdź</span>
+                    </button>
+                    @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+                    }
+                    
                     <div style="clear: both;"></div>
                 </div>
                 <div id="leftItemSM">

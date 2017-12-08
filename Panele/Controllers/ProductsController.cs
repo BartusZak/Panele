@@ -7,6 +7,7 @@ using System.Data.Entity;
 using Panele.DAL;
 using System.Net;
 using Panele.Models;
+using PagedList;
 using Panele.ViewModels;
 
 namespace Panele.Controllers
@@ -19,10 +20,25 @@ namespace Panele.Controllers
 		{
             _context = new ShopContext();
 		}
-		public ActionResult Index()
+		public ActionResult Index(int? page,string CurrentFilter,string searchString)
 		{
-			var products = _context.Products.ToList();
-			return View(products);
+            ViewBag.currentFilter = searchString;
+            var productList = from p in _context.Products
+                              select p;
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                productList = productList.Where(p => p.Name.Contains(searchString));
+            }
+
+            productList = productList.OrderBy(x => x.Name);
+            int pageSize = 20;
+            int numberPage = (page ?? 1);
+			return View(productList.ToPagedList(numberPage,pageSize));
 		}
 		public ActionResult Details(int? Id)
 		{
