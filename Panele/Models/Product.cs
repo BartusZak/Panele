@@ -40,6 +40,12 @@ namespace Panele.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name ="Model")]
+        public string Model { get; set; }
+
+
+        [Required]
+        [StringLength(50)]
         [Display(Name = "Firma")]
         public string Company { get; set; }
 
@@ -54,6 +60,10 @@ namespace Panele.Models
         [Required]
         [Display(Name = "Stan")]
         public string State { get; set; }
+
+        [Required]
+        [Display(Name ="Kategoria")]
+        public string Category { get; set; }
 
         [Required]
         [Display(Name = "Rodzaj")]

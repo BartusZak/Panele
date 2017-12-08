@@ -163,6 +163,8 @@ namespace Panele.Controllers
             var actualRate = productionDB.Rate;
             productionDB.numberOfVotes = voteNumers;
             productionDB.Rate = actualRate;
+            productionDB.Category = product.Category;
+            productionDB.Model = product.Model;
             productionDB.Name = product.Name;
             productionDB.Company = product.Company;
             productionDB.Cost = product.Cost;

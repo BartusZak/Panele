@@ -20,9 +20,12 @@ namespace Panele.Controllers
 		{
             _context = new ShopContext();
 		}
-		public ActionResult Index(int? page,string CurrentFilter,string searchString)
+		public ActionResult Index(int? page,string CurrentFilter,string searchString, string sortBy)
 		{
-            ViewBag.currentFilter = searchString;
+
+            ViewBag.CurrentFilter = searchString;
+            ViewBag.CurrentSort = sortBy;
+            
             var productList = from p in _context.Products
                               select p;
 
@@ -34,12 +37,20 @@ namespace Panele.Controllers
             {
                 productList = productList.Where(p => p.Name.Contains(searchString));
             }
+            if (!String.IsNullOrEmpty(sortBy))
+            {
+                productList = productList.Where(p => p.Category == sortBy);
+            }
 
             productList = productList.OrderBy(x => x.Name);
             int pageSize = 20;
             int numberPage = (page ?? 1);
 			return View(productList.ToPagedList(numberPage,pageSize));
 		}
+        public ActionResult ShowByCategory()
+        {
+            return View();
+        }
 		public ActionResult Details(int? Id)
 		{
 			var product = _context.Products.SingleOrDefault(x => x.Id == Id);

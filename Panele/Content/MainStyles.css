@@ -121,29 +121,29 @@ p > span {
     font-size: 20px;
 }
 p > span:hover{
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 .advforYou {
     margin-top: 60px;
-    width: 1246px;
+    width: 100%;
     border-width: 2px;
     border: solid;
     border-color: #dedede;
     height: 355px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 7.5px;
-    padding-bottom: 7.5px;
+
+
    
 }
-.advforYouContainer{
-    margin-left: -60px;
+.advforYou ul{
+    padding-right: 1%;
+}
+.advforYou h2{
+    padding-left: 1%;
 }
 .advforYou ul > li{
     display: inline-block;
-    width: 250px;
-    height: 250px;
+    width: 19%;
+    height: 270px;
     text-align: center;
 }
 .bigAdv {
@@ -186,14 +186,14 @@ p > span:hover{
    
     color: white;
 }
-#secondNavBar {
+.secondNavBar {
     height: 50px;
     background-color: #ff7e21;
     width: 1250px;
     padding: 15px;
     font-size: 24px;
 }
-#secondNavBar input[type=text]{
+.secondNavBar input[type=text]{
     height: 24px;
     margin-top: 12px;
     width: 200px;
@@ -365,7 +365,7 @@ color: #ff7e21;
     line-height: 1.1;
 }
 .contentOfnextPages a{
-     text-decoration: none;
+    text-decoration: none;
     color: #ff7e21;
 }
 
@@ -376,15 +376,15 @@ color: #ff7e21;
 
 #thirdFirstAbout {
     float: left;
-    width: 610px;
+    width: 50%;
     margin-top: 60px;
-    padding: 20px;
+    padding: 1%;
 }
 
 #fourthFirstAbout {
     float: left;
-    padding: 20px;
-    width: 550px;
+    padding: 1%;
+    width: 40%;
 }
 
 /* Kadra */

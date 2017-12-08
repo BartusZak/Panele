@@ -208,9 +208,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712071353177_migracja.cs" />
-    <Compile Include="Migrations\201712071353177_migracja.Designer.cs">
-      <DependentUpon>201712071353177_migracja.cs</DependentUpon>
+    <Compile Include="Migrations\201712081526330_droping.cs" />
+    <Compile Include="Migrations\201712081526330_droping.Designer.cs">
+      <DependentUpon>201712081526330_droping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081530536_ADDingcolumn.cs" />
+    <Compile Include="Migrations\201712081530536_ADDingcolumn.Designer.cs">
+      <DependentUpon>201712081530536_ADDingcolumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081623211_ChangingModel.cs" />
+    <Compile Include="Migrations\201712081623211_ChangingModel.Designer.cs">
+      <DependentUpon>201712081623211_ChangingModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -269,8 +277,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712071353177_migracja.resx">
-      <DependentUpon>201712071353177_migracja.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712081526330_droping.resx">
+      <DependentUpon>201712081526330_droping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081530536_ADDingcolumn.resx">
+      <DependentUpon>201712081530536_ADDingcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081623211_ChangingModel.resx">
+      <DependentUpon>201712081623211_ChangingModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

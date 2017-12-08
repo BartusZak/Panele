@@ -22,37 +22,56 @@
     <div>
         @Html.Partial("_navBar")
         <div class="Container">
-            <div style="width: 98%;" id="secondNavBar">
+            <div style="width: 98%;" class="secondNavBar">
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index", new { sortBy = "Ogród" })'">
+                    <span>Ogród</span>
+                </button>
+
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index", new { sortBy = "Salon" })'">
+                    <span>Salon</span>
+                </button>
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index",new { sortBy = "Pokój" })'">
+                    <span>Pokoje</span>
+                </button>
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index",new { sortBy = "Łazienka" })'">
+                    <span>Łazienki</span>
+                </button>
+
                 @using (Html.BeginForm())
                 {
-                    <button class="coolbutt" onclick="location.href='@Url.Action("Index")'">
+                   
+                    
+                    <button style="color: black;" class="coolbutt" onclick="location.href='@Url.Action("Index")'">
                         <span>Znajdź</span>
                     </button>
                     @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+
+
                 }
+           
                
-                <div style="clear: both;"></div>
+                
+
             </div>
-            <div class="pagination-in-Offert" style="margin-top: 30px;">
+            <div style="width: 98%; margin-bottom: 30px;" class="secondNavBar">
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index", new { sortBy = "Kuchnia" })'">
+                    <span>Kuchnia</span>
+                </button>
 
-
-                @if (Model.PageCount <= 0)
-                {
-                    <p style="color: red; font-weight: bold; margin-left: 500px;">Przykro nam. Nie ma nic do wyświetlenia !</p>
-                }
-                else
-                {
-                    <p>
-                       
-
-                        @Html.PagedListPager(Model, page => Url.Action("Index",
-                            new { page }))
-                        Strona @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
-
-                    </p>
-
-                }
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index", new { sortBy = "Inne" })'">
+                    <span>Inne</span>
+                </button>
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index",new { sortBy = "Akcesoria" })'">
+                    <span>Akcesoria</span>
+                </button>
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index",new { sortBy = "Usługi" })'">
+                    <span>Usługi</span>
+                </button>
             </div>
+
+
+
+          
             
             <div class="Content">
                 @foreach (var element in Model)
@@ -82,7 +101,7 @@
                         </div>
                         <div class="costLook">
                             <div class="leftLook">
-                                @element.Cost
+                                @element.Cost zł
                             </div>
                             <div class="rightLook">
                                 <i class="icon-suitcase"></i>
@@ -95,9 +114,61 @@
 
             </div>
           
+          
 
+            <div class="pagination-in-Offert" style="margin-top: 30px;">
+
+
+                @if (Model.PageCount <= 0)
+                {
+                    <p style="color: red; font-weight: bold;">Przykro nam. Nie ma nic do wyświetlenia !</p>
+                }
+                else
+                {
+                    <p>
+
+
+                        @Html.PagedListPager(Model, page => Url.Action("Index",
+                            new { page, CurrentFilter =ViewBag.CurrentFilter, sortBy = ViewBag.currentSort }))
+                        Strona @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+
+                    </p>
+
+                }
+            </div>
             <div style="clear: both;"></div>
+            <div class="advforYou">
+                <h2>Rekomendacje dla Ciebie</h2>
+                <div class="advforYouContainer">
+                    <ul>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="advforYou">
+                <h2>Szczególnie polecamy</h2>
+                <div class="advforYouContainer">
+                    <ul>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
+      
         @Html.Partial("_prefooter")
         @Html.Partial("_footer")
     </div>

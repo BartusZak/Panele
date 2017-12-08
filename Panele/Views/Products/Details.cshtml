@@ -21,6 +21,9 @@
 <body onload="changingColor()">
     @Html.Partial("_navBar")
     <div id="detailContainer"> 
+        <div style="text-align: center; background-color: coral; margin-top: 30px; height: 26px; padding: 12px;">
+            <b style="font-size: 24px; color: white;">Kategoria: @Model.Category</b>
+        </div>
         <div id="secondContainer">
             <div id="leftPhoto">
                 <img src="~/Content/image_2100 (1).jpg" height="350"/>
@@ -35,15 +38,21 @@
                 </p>
             </div>
             <div id="rightAdnotations">
-                <h2>@Model.Name</h2>
+                <div style="margin-top: 10px;">
+                    <b style="font-size: 24px; ">@Model.Name</b>
+                </div>
+              
+        
                 <div id="leftCont">
                     <div id="company">                      
                         <h3>Firma: @Model.Company</h3>
                     </div>
                     <div id="informations">
+                        <p><b>Model: @Model.Model </b></p>
+                        <p><b>Rodzaj: @Model.Type </b></p>
                         <p><b>Wymiary: </b></p>
                         <ul>
-                            <li>Długość: @Model.Height cm</li>
+                            <li>Długość: @Model.Lenght cm</li>
                             <li>Szerokość: @Model.Width cm</li>
                             <li>Wysokość: @Model.Height cm</li>
                             <li>Głębokość: @Model.Greg cm</li>
@@ -63,8 +72,7 @@
                         <p>@Model.Color</p>
                         <p style="font-weight: bold;">Dostępność w sklepie: </p>
                         <p>@Model.State</p>
-                        <p style="font-weight: bold;">Data dodania: </p>
-                        <p>@Model.AddDate.ToString()</p>
+
                     </div>
                 </div>
                 <div id="rightCont">

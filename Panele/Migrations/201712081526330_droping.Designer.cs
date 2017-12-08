@@ -7,13 +7,13 @@ namespace Panele.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class migracja : IMigrationMetadata
+    public sealed partial class droping : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(migracja));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(droping));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712071353177_migracja"; }
+            get { return "201712081526330_droping"; }
         }
         
         string IMigrationMetadata.Source
