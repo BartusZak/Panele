@@ -1,7 +1,7 @@
 ﻿@using Panele.Models
-@model LogInViewModel
+@model RegisterViewModel
 @{
-   Layout = null;
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -15,26 +15,30 @@
     <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
-    <title>Logowanie</title>
+    <title>Rejestracja</title>
 </head>
 <body>
     @Html.Partial("_navBar")
     <div id="container">
-        <h1>Logowanie</h1>
+        <h1>Rejestracja</h1>
         <section id="loginForm">
-            @using (Html.BeginForm("LogIn", "Home", new { returnUrl = ViewBag.returnUrl }, FormMethod.Post))
+            @using (Html.BeginForm("Register", "Account", new { returnUrl = ViewBag.returnUrl }, FormMethod.Post))
             {
+            @Html.AntiForgeryToken()
             @Html.ValidationSummary(false, "")
             <div class="formGroup">
-                <div class="formLabel">@Html.LabelFor(m => m.Login)</div>
-                @Html.TextBoxFor(m => m.Login)
+                <div class="formLabel">@Html.LabelFor(m => m.UserName)</div>
+                @Html.TextBoxFor(m => m.UserName)
             </div>
             <div class="formGroup">
                 <div class="formLabel">@Html.LabelFor(m => m.Password)</div>
                 @Html.PasswordFor(m => m.Password)
             </div>
-            <input type="submit" value="Zaloguj" id="submitBtn" />
-            }
+            <div class="formGroup">
+                <div class="formLabel">@Html.LabelFor(m => m.ConfirmPassword)</div>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </div>
+            <input type="submit" value="Załóż konto" id="submitBtn" />}
         </section>
     </div>
     @Html.Partial("_preFooter")

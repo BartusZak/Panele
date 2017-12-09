@@ -11,7 +11,7 @@ namespace Panele.Models
 		[Required]
 		[Display(Name = "Nazwa użytkownika")]
 		[DataType(DataType.Text)]
-		public string Login { get; set; }
+		public string UserName { get; set; }
 
 		[Required]
 		[Display(Name = "Hasło")]
