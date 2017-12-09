@@ -32,10 +32,17 @@
 #options {
     float: left;
     margin-top: 110px;
-    margin-left: 200px;
-    width: 700px;
+    margin-left: 100px;
+    width: 55%;
     height: 60px;
    
+}
+#options > ul{
+    display: inline-block;
+    padding-left: 0;
+    width: 50%;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 #options ul > li {
     text-align: center;
@@ -45,11 +52,11 @@
     margin-right: 7.5px;
     font-size: 20px;
     color: white;
-    width: 15%;
+    width: 20%;
     height: 100%;
     vertical-align: middle;
 }
-#options ul > li > a{
+#options ul a{
     text-align: center;
     display: inline-block;
     letter-spacing: 2px;
@@ -63,6 +70,17 @@
 #options ul > li > a:hover{
     cursor:pointer;
     font-size: 26px;
+}
+#LoggedInInfo {
+    float: right;
+    width: 40% !important;
+    text-align: right;
+    line-height: 22px;
+}
+#LoggedInInfo > li{
+    width: 30% !important;
+}
+#LoggedInInfo > a{
 }
 
 #content {

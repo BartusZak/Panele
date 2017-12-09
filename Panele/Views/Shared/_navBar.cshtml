@@ -2,11 +2,22 @@
     @Html.Partial("_logo")
     <div id="options">
         <ul>
-            <li>@Html.ActionLink("O nas","About","Home")</li>
-            <li>@Html.ActionLink("Kadra","Kadra","Home")</li>
-            <li>@Html.ActionLink("Oferta", "Index","Products")</li>
-            <li>@Html.ActionLink("Zaloguj", "LogIn","Account")</li>
-            <li>@Html.ActionLink("Rejestracja", "Register","Account")</li>
+            <li>@Html.ActionLink("O nas", "About", "Home")</li>
+            <li>@Html.ActionLink("Kadra", "Kadra", "Home")</li>
+            <li>@Html.ActionLink("Oferta", "Index", "Products")</li>
         </ul>
-    </div>
+        @if (!Request.IsAuthenticated)
+        {
+        <ul id="LoggedInInfo">
+            <li>@Html.ActionLink("Zaloguj", "LogIn", "Account")</li>
+            <li>@Html.ActionLink("Rejestracja", "Register", "Account")</li>
+        </ul>
+        }
+        else
+        {
+        <ul id="LoggedInInfo">
+            @User.Identity.Name @Html.ActionLink("Wyloguj", "LogOut", "Account")
+        </ul>
+        }
+</div>
 </div>

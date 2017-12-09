@@ -100,6 +100,11 @@ namespace Panele.Controllers
 			}
 			return View(model);
 		}
+		public ActionResult LogOut()
+		{
+			AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+			return RedirectToAction("Index", "Home");
+		}
 		private void AddErrors(IdentityResult result)
 		{
 			foreach (var error in result.Errors)
