@@ -33,14 +33,18 @@
     float: left;
     margin-top: 110px;
     margin-left: 100px;
-    width: 55%;
+    width: 70%;
     height: 60px;
    
 }
-#options > ul{
+#userName{
+    width: auto !important;
+    margin-left: 20% !important;
+}
+#options > ul {
     display: inline-block;
     padding-left: 0;
-    width: 50%;
+    width: 85%;
     margin-top: 16px;
     margin-bottom: 16px;
 }
@@ -52,7 +56,7 @@
     margin-right: 7.5px;
     font-size: 20px;
     color: white;
-    width: 20%;
+    width: 10%;
     height: 100%;
     vertical-align: middle;
 }
@@ -70,17 +74,6 @@
 #options ul > li > a:hover{
     cursor:pointer;
     font-size: 26px;
-}
-#LoggedInInfo {
-    float: right;
-    width: 40% !important;
-    text-align: right;
-    line-height: 22px;
-}
-#LoggedInInfo > li{
-    width: 30% !important;
-}
-#LoggedInInfo > a{
 }
 
 #content {

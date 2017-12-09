@@ -5,19 +5,14 @@
             <li>@Html.ActionLink("O nas", "About", "Home")</li>
             <li>@Html.ActionLink("Kadra", "Kadra", "Home")</li>
             <li>@Html.ActionLink("Oferta", "Index", "Products")</li>
-        </ul>
-        @if (!Request.IsAuthenticated)
-        {
-        <ul id="LoggedInInfo">
+            @if (!Request.IsAuthenticated)
+            {
             <li>@Html.ActionLink("Zaloguj", "LogIn", "Account")</li>
-            <li>@Html.ActionLink("Rejestracja", "Register", "Account")</li>
+            <li>@Html.ActionLink("Rejestracja", "Register", "Account")</li>}
+            else
+            {
+            <li id="userName">@User.Identity.Name</li>
+            <li>@Html.ActionLink("Wyloguj", "LogOut", "Account")</li>}
         </ul>
-        }
-        else
-        {
-        <ul id="LoggedInInfo">
-            @User.Identity.Name @Html.ActionLink("Wyloguj", "LogOut", "Account")
-        </ul>
-        }
-</div>
+    </div>
 </div>
