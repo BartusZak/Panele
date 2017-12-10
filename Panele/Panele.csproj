@@ -188,6 +188,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\ChangingColor.js" />
     <Content Include="Scripts\contentChanger.js" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\interactiveNavBarElement.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -201,6 +202,7 @@
   <ItemGroup>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -208,24 +210,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712081526330_droping.cs" />
-    <Compile Include="Migrations\201712081526330_droping.Designer.cs">
-      <DependentUpon>201712081526330_droping.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081530536_ADDingcolumn.cs" />
-    <Compile Include="Migrations\201712081530536_ADDingcolumn.Designer.cs">
-      <DependentUpon>201712081530536_ADDingcolumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081623211_ChangingModel.cs" />
-    <Compile Include="Migrations\201712081623211_ChangingModel.Designer.cs">
-      <DependentUpon>201712081623211_ChangingModel.cs</DependentUpon>
+    <Compile Include="Migrations\201712091447184_migracja.cs" />
+    <Compile Include="Migrations\201712091447184_migracja.Designer.cs">
+      <DependentUpon>201712091447184_migracja.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\RateValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup1.cs" />
+    <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Users\AppUser.cs" />
     <Compile Include="ViewModels\InformationAboutVotesViewModel.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
@@ -260,8 +254,8 @@
     <Content Include="Views\Manage\Details.cshtml" />
     <Content Include="Views\Manage\AddProduct.cshtml" />
     <Content Include="Views\Manage\Edit.cshtml" />
-    <Content Include="Views\Home\LogIn.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Account\LogIn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_mainLayout.cshtml" />
     <Content Include="Views\Manage\LastAdd.cshtml" />
     <Content Include="Views\Shared\_forUserLayout.cshtml" />
@@ -277,14 +271,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712081526330_droping.resx">
-      <DependentUpon>201712081526330_droping.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081530536_ADDingcolumn.resx">
-      <DependentUpon>201712081530536_ADDingcolumn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081623211_ChangingModel.resx">
-      <DependentUpon>201712081623211_ChangingModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712091447184_migracja.resx">
+      <DependentUpon>201712091447184_migracja.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

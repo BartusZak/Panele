@@ -10,10 +10,15 @@ using Panele.Users;
 
 namespace Panele.DAL
 {
-    public class ShopContext:IdentityDbContext<ApplicationUser>
-    {
-        public ShopContext() : base("ShopContext") { }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<RateValue> RateValues { get; set; }
-    }
+	public class ShopContext : IdentityDbContext<ApplicationUser>
+	{
+		public ShopContext() : base("ShopContext") { }
+		public DbSet<Product> Products { get; set; }
+		public DbSet<RateValue> RateValues { get; set; }
+
+		public static ShopContext Create()
+		{
+			return new ShopContext();
+		}
+	}
 }

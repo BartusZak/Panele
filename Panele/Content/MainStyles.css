@@ -32,10 +32,21 @@
 #options {
     float: left;
     margin-top: 110px;
-    margin-left: 200px;
-    width: 700px;
+    margin-left: 100px;
+    width: 70%;
     height: 60px;
    
+}
+#userName{
+    width: auto !important;
+    margin-left: 20% !important;
+}
+#options > ul {
+    display: inline-block;
+    padding-left: 0;
+    width: 85%;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 #options ul > li {
     text-align: center;
@@ -45,11 +56,11 @@
     margin-right: 7.5px;
     font-size: 20px;
     color: white;
-    width: 15%;
+    width: 10%;
     height: 100%;
     vertical-align: middle;
 }
-#options ul > li > a{
+#options ul a{
     text-align: center;
     display: inline-block;
     letter-spacing: 2px;
