@@ -28,7 +28,7 @@
         </div>
         <div id="rightPanel">
             <div id="infoDesk">
-                <div class="navbarElements">
+                <div style="width: 100%;" class="navbarElements">
 
                     @using (Html.BeginForm())
                     {
@@ -51,19 +51,19 @@
 
 
                         </div>
-                        <button style="margin-left:0 ;" class="navbutt" onclick="location.href='@Url.Action("Searcher", "Manage")'">
+                     
+                    }
+                    <button style="margin-left:0 ;" class="navbutt" onclick="location.href='@Url.Action("Searcher", "Manage")'">
                         <span>Wyszukiwarka</span>
                     </button>
                     <button class="navbutt" onclick="location.href='@Url.Action("Searcher", "Manage")'">
                         <span>Wyświetl listę zmian</span>
                     </button>
-                
-                    <button class="navbutt" onclick="location.href='@Url.Action("Searcher", "Manage")'">
+
+                    <button class="navbutt" onclick="location.href='@Url.Action("ShowWithRate", new { Rate = 5 })'">
                         <span>Najwyżej oceniane</span>
                     </button>
-
-                        <div style="clear: both;"></div>
-                    }
+                    <div style="clear: both;"></div>  
 
 
 

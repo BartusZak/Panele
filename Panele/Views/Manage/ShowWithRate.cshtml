@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Panele.Models.Product>
+@{
+    ViewBag.Title = "ShowWithRate";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+    var licznik = 1;
+}
+<style>
+   .butt span{
+       font-size: 24px;
+   }
+  .buttonsGroup{
+      width: 100%;
+      text-align: center;
+      
+  }
+</style>
+
+
+@if (!Model.Any())
+{
+    <p style="color: red; font-weight: bold; margin-left: 500px;">Przykro nam. Nie ma nic do wyświetlenia !</p>
+}
+else
+{
+    <table class="products">
+        <tr>
+            <th>Id</th>
+            <th>Nazwa</th>
+            <th>Firma</th>
+            <th>Cena</th>
+            <th>Data</th>
+            <th>Status</th>
+            <th>Rodzaj</th>
+            <th>Ocena</th>
+            <th>Resetuj</th>
+        </tr>
+        @foreach (var element in Model)
+        {
+            licznik++;
+            if (licznik > 20)
+            {
+                licznik = 1;
+                break;
+            }
+            <tr>
+                <td>
+                    @element.Id
+                </td>
+                <td>
+                    @element.Name
+                </td>
+                <td>
+                    @element.Company
+                </td>
+                <td>
+                    @element.Cost
+                </td>
+                <td>
+                    @element.AddDate
+                </td>
+                <td>
+                    @element.State
+                </td>
+                <td>
+                    @element.Type
+                </td>
+                <td>
+                    @if (element.Rate == 0)
+                    {
+                        <span>Nie oceniono</span>
+                    }
+                    else
+                    {
+                        <Span>@element.Rate</Span>
+                    }
+
+                </td>
+
+                <td>
+                    @Html.ActionLink("Ocenę", "ResetOpinion", "Manage", new { id = element.Id}, null)
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+}
+
+<div class="buttonsGroup">
+    <button class="butt" onclick="location.href='@Url.Action("ShowWithRate", "Manage", new { Rate = 1 })'">
+        <span>Ocena &#x2264; 1</span>
+    </button>
+    <button class="butt" onclick="location.href='@Url.Action("ShowWithRate", "Manage", new { Rate = 2 })'">
+        <span>Ocena &#x2264; 2</span>
+    </button>
+    <button class="butt" onclick="location.href='@Url.Action("ShowWithRate", "Manage", new { Rate = 3 })'">
+        <span>Ocena &#x2264; 3</span>
+    </button>
+    <button class="butt" onclick="location.href='@Url.Action("ShowWithRate", "Manage", new { Rate = 4 })'">
+        <span>Ocena &#x2264; 4</span>
+    </button>
+    <button class="butt" onclick="location.href='@Url.Action("ShowWithRate", "Manage", new { Rate = 5 })'">
+        <span>Ocena &#x2264; 5</span>
+    </button>
+    <button class="butt" onclick="location.href='@Url.Action("ShowWithRate", "Manage", new { Rate = 0})'">
+        <span>Brak oceny</span>
+    </button>
+</div>

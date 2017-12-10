@@ -33,6 +33,8 @@ namespace Panele.Controllers
             ViewBag.byType = sortBy == "Type" ? "type" : "Type";
             ViewBag.byMaterial = sortBy == "Material" ? "material" : "Material";
 
+
+
             if(searchString != null)
             {
                 page = 1;
@@ -44,7 +46,7 @@ namespace Panele.Controllers
             ViewBag.CurrentFilter = searchString;
             var productList = from p in _context.Products
                            select p;
-
+          
             if (!String.IsNullOrEmpty(searchString))
             {
                 productList = productList.Where(p => p.Id.ToString().Contains(searchString)
@@ -97,7 +99,41 @@ namespace Panele.Controllers
             return View(productList.ToPagedList(numberPage, pageSize));
             
         }
-       
+        public ActionResult ShowWithRate(int? Rate)
+        {
+            var productList = from p in _context.Products
+                              select p;
+            if(Rate == null)
+            {
+                return HttpNotFound();
+            }
+            if(Rate == 0)
+            {
+                productList = productList.Where(p => p.Rate == Rate);
+                productList = productList.OrderByDescending(p => p.Rate);
+            }
+            if(productList != null)
+            {
+                productList = productList.Where(p => p.Rate > Rate-1 & p.Rate <= Rate);
+                productList = productList.OrderByDescending(p => p.Rate);
+            }
+            return View(productList.ToList());
+        }
+        public ActionResult ResetOpinion(int Id)
+        {
+            var ProductRate = _context.RateValues.SingleOrDefault(p => p.ProductId == Id);
+            var ProductInDb = _context.Products.SingleOrDefault(p => p.Id == Id);
+            ProductInDb.Rate = 0;
+            ProductRate.RateNumberOne = 0;
+            ProductRate.RateNumberTwo = 0;
+            ProductRate.RateNumberThree = 0;
+            ProductRate.RateNumberFour = 0;
+            ProductRate.RateNumberFive = 0;
+            _context.SaveChanges();
+            return RedirectToAction("ShowWithRate", new { Rate = 5 });
+        }
+
+
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -290,7 +326,7 @@ namespace Panele.Controllers
 
             return RedirectToAction("Details", new { id = product.Last().Id });
         }
-
+       
 
 
 

@@ -260,6 +260,7 @@
     <Content Include="Views\Manage\LastAdd.cshtml" />
     <Content Include="Views\Shared\_forUserLayout.cshtml" />
     <Content Include="Views\Products\ChangeRate.cshtml" />
+    <Content Include="Views\Manage\ShowWithRate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
