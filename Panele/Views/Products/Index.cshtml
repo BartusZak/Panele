@@ -14,6 +14,7 @@
     <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
     <link href="~/Content/MainStyles.css" rel="stylesheet" />
     <link href="~/Content/OfertStyles.css" rel="stylesheet" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="~/Scripts/ChangingColor.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
@@ -67,6 +68,11 @@
                 <button class="coolbutt" onclick="location.href='@Url.Action("Index",new { sortBy = "Usługi" })'">
                     <span>Usługi</span>
                 </button>
+                <button style="width: 400px;" class="coolbutt" onclick="location.href='@Url.Action("Index")'">
+                    <span>Wszystkie</span>
+                </button>
+             
+              
             </div>
 
 
@@ -172,5 +178,6 @@
         @Html.Partial("_prefooter")
         @Html.Partial("_footer")
     </div>
+
 </body>
 </html>

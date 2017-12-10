@@ -200,6 +200,36 @@ p > span:hover{
     margin-left: 20px;
     border-radius: 5px;
 }
+.secondNavBar button ol{
+    list-style: none;
+    background-color: #ff7e21;
+    position: absolute;
+    width: 200px;
+    padding: 0;
+    text-align: center;
+    margin-left: 0.5%;
+    display: none;
+}
+.secondNavBar button ol > li{
+    display: block;
+    margin-top: 15px;
+    background-color: red;
+}
+.secondNavBar button ol > li:last-child{
+    display: block;
+    margin-bottom: 15px;
+}
+.secondNavBar button ol > li a{
+    text-decoration: none;
+    color: black;
+}
+.secondNavBar button ol > li:hover{
+    cursor: pointer;
+}
+
+
+
+
 #leftItemSM {
     width: 140px;
     color: white;
@@ -544,6 +574,7 @@ color: #ff7e21;
     display: block;
     width: 100%;
 }
+
 .coolbutt {
     display: inline-block;
     border-radius: 4px;
@@ -557,6 +588,7 @@ color: #ff7e21;
     margin-top: 10px;
     transition: all 0.5s;
     float: left;
+    display: block;
 
 }
 .coolbutt span {
