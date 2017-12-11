@@ -1,0 +1,385 @@
+﻿body {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#leftPanel {
+    font-size: 20px;
+    width: 14%;
+    height: 2000px;
+    background-color: #3a3f51;
+    color: white;
+    float: left;
+    padding-top: 37px;
+}
+#leftPanel span{
+   color: aqua;
+   margin-left: 10px;
+}
+#leftPanel ul {
+        list-style: none;
+        -webkit-padding-start: 0;
+        margin-top: 80px;
+        padding-left: 0;
+      
+    }
+#leftPanel ul > li {
+    
+      height: 35px;
+      margin-bottom: 10px;
+      padding: 20px;
+      padding-left: 40px;
+
+  
+}
+#leftPanel ul > li:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+#leftPanel ul > li a{
+    text-decoration: none;
+    display: block;
+    color: white;
+   
+}
+#rightPanel {
+    float: left;
+    background-color: #3a3f51;
+    width: 86%;
+    height: 100px;
+    font-size: 18px;
+    color: aqua;
+}
+#infoDesk{
+   height: 66px;
+   text-align: left;
+   padding: 17px;
+}
+#infoDesk h3{
+    color: orange;
+    margin-left: 20px;
+}
+#infoDesk ul{
+    list-style: none;
+    margin-left: 230px;
+}
+#infoDesk ul > li{
+    display: inline-block;
+    margin-right: 80px;
+}
+#infoDesk ul > li:first-child{
+    display: inline-block;
+
+}
+#infoDesk ul > li label:hover{
+    cursor: pointer;
+}
+#cont{
+    color: black;
+    padding-top: 140px;
+    padding-left: 300px;
+    padding-right: 40px;
+    font-size: 20px;
+    width: 1400px;
+    height: 100%;
+}
+#FindCategory{
+    height: 20px;
+}
+.products {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.products tr:nth-child(even) {
+    background-color: #f2f2f2;
+
+}
+.products tr:nth-child(even):hover {
+    background-color: #4CAF50;
+    cursor: pointer;
+
+}
+.products tr:nth-child(odd):hover {
+    background-color: #4CAF50;
+    cursor: pointer;
+}
+
+.products th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #3a3f51;
+    color: white;
+}
+.products th > a{
+    text-decoration: none;
+    color:  aqua;
+}
+.products td, #products th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.products td {
+    text-align: center;
+    margin-top: 20px;
+}
+.products td:last-child{
+    word-spacing: 10px;
+}
+#placeL{
+    float: left;
+    width: 510px;
+    height: 800px;
+    padding: 20px;
+    margin-left: 40px;
+
+}
+#placeR {
+    float: left;
+    width: 760px;
+    padding: 20px;
+    text-align: center;
+    height: 650px;
+}
+#up p,h4{
+    margin-left: 60px; 
+}
+.butt{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 20px;
+
+}
+.butt span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.butt > a{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+.butt span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.butt:hover span {
+    padding-right: 25px;
+}
+
+.butt:hover span:after {
+        opacity: 1;
+        right: 0;
+}
+
+.navbutt {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3a3f51;
+    text-decoration: none;
+    color: azure;
+    font-size: 23px;
+    display: block;
+    border: none;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    transition: all 0.5s;
+    float: left;
+    margin-left: 10px;
+    margin-top: 2px;
+    
+}
+.navbutt span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.navbutt > a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+.navbutt span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    color: orange;
+    transition: 0.5s;
+}
+
+.navbutt:hover span {
+    padding-right: 25px;
+    cursor: pointer;
+     color: orange;
+}
+
+.navbutt:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+.place input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.place {
+    width: 60%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+
+}
+.place p{
+    padding-top: 5px;
+}
+#searchString{
+    width: 170px;
+    float: left;
+    margin-top: 3px;
+    margin-left: 25px;
+}
+.searchButton {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #4CAF50;
+    color: #fff;
+    width: 100px;
+    font-weight: bold;
+    margin-left: 10px;
+    background-color: #f4511e;
+    float: left;
+    border: none;
+    border-radius: 15px;
+}
+.searchButton:hover {
+    background-color: #3e8e41
+}
+.navbarElements{
+    margin-left: 30px;
+    float: left;
+}
+
+#valMessage{
+   float: left;
+   margin-left: 1100px; 
+}
+.field-validation-error{
+    color: red;
+    margin-left: 20px;
+  
+}
+.input-validation-error{
+  border: 2px solid red !important;
+}
+.validation-summary-errors {
+    font-weight: bold !important;
+ 
+}
+.validation-summary-errors ul > li {
+    font-weight: bold !important;
+    color: #ff0000 !important;
+}
+.holder{
+    float: left;
+    margin-top: 5px;
+}
+
+.navElement{
+    float: left;
+    font-size: 22px;
+    margin-top: 12px;
+    margin-left: 60px;
+}
+.navElement:hover{
+    cursor: pointer;
+}
+.holder span {
+    text-decoration: none;
+    color: azure;
+    font-size: 23px;
+    display: block;
+    width: 246px;
+    text-align: center;
+    height: 60px;
+    padding: 10px 0;
+}
+
+.holder span:hover {
+    text-decoration: none;
+    color: aqua;
+    cursor: pointer;
+    border: 2px dotted #FFF;
+}
+
+
+.holder ol {
+    list-style: none;
+    background-color: #3a3f51;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    display: none;
+   
+}
+.holder ol > li{
+    width: 246px;
+    border: 2px dotted #FFF;
+    display: block;
+    height: 60px;
+    padding: 10px 0;
+      transition: 0.5s;
+}
+.holder ol > li > a {
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    display: block;
+   
+}
+
+.holder ol > li:hover
+{
+    background-color: #4b4f62;
+}
+.drp{
+    width: 250px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: none;
+    height: 20px;
+}

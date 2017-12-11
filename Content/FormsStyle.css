@@ -1,0 +1,11 @@
+﻿#container{
+    width: 60%;
+    margin: auto;
+}
+.formGroup{
+    margin: 1em 0px;
+}
+.formLabel{
+    display: inline-block;
+    width: 10em;
+}
