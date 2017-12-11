@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/MainStyles.css" rel="stylesheet" />
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+    <title>About</title>
+</head>
+<body>
+    @Html.Partial("_navBar")
+   <div class="contentOfnextPages">
+       @Html.Partial("_logo")
+       <div id="firstAbout">
+           <span>
+               Nasza firma zajmuje się sprzedaża różnego rodzaju produktów związanych z brażą budowlaną. Istniejemy
+               na rynku od ponad dziesięciu lat, co pozwoliło nam rozwinąć w znacznym stopniu jakość świadczonych usług.
+               Posiadamy ogromny zapas wszelkiego rodzaju produktów przeznaczonych do prac remontowych. Wieloletnia
+               współ praca z róznego rodzaju firmami, zaowocowała kontraktami oraz możliwością szybkiego pozyskania
+               odpowiednich artykułów budowlanych.
+           </span>
+       </div>
+       <div id="secondFirstAbout">
+               <h3>Kim jesteśmy?</h3>
+               <span>
+                    Nasza kadra, to grono wykwalifikowany ekspertów z branży budowlanej, a także projektantów wnętrz. 
+                   Potrafimy doradzić każdemu klientowi i wybrać odpowiednie dla niego produkty. Nasi pracownicy sądzą, że
+                   nie ma rzeczy niewykonalnych. Potrafią zmienić każde wnętrze i nadać mu odpowiedni klimat. Sprawdź nas: @Html.ActionLink("kadra", "Kadra", "Home")
+
+               </span>
+       </div>
+       <div id="thirdFirstAbout">
+           <h3>Gdzie się znajdujemy?</h3>
+           <span>
+               Nasza firma znajduje się na <b>ul. Obwodowej 6</b>. Jest to ulica, w której znajduje się wiele firm związanych z różnego rodzaju handlem.
+               Aby dokładniej przyjrzeć się naszej lokalizacji
+               wystarczy kliknąć
+               w link:  <a href="https://goo.gl/maps/iMRY3iNDoa32">tutaj</a>.
+         
+
+           </span>
+       </div>
+       <div id="fourthFirstAbout">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2342.7897893168115!2d21.793516!3d54.0419969!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e187cdef708e67%3A0xa84befe884daef36!2sF.H.U.+PANELEO+Leszek+P%C5%82oszy%C5%84ski!5e0!3m2!1spl!2spl!4v1510935879433" width="550" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+       </div>
+       <div style="clear: both;"></div>
+          
+   
+     
+
+   </div>
+    @Html.Partial("_preFooter")
+    @Html.Partial("_footer")
+</body>
+</html>

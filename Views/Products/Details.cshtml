@@ -1,0 +1,146 @@
+﻿@model Panele.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Szczegóły</title>
+    <link href="~/Content/DetailStyles.css" rel="stylesheet" />
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+    <link href="~/Content/MainStyles.css" rel="stylesheet" />
+    <link href="~/Content/OfertStyles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+    <script src="~/Scripts/ChangingColor.js"></script>
+
+</head>
+<body onload="changingColor()">
+    @Html.Partial("_navBar")
+    <div id="detailContainer"> 
+        <div style="text-align: center; background-color: coral; margin-top: 30px; height: 26px; padding: 12px;">
+            <b style="font-size: 24px; color: white;">Kategoria: @Model.Category</b>
+        </div>
+        <div id="secondContainer">
+            <div id="leftPhoto">
+                <img src="~/Content/image_2100 (1).jpg" height="350"/>
+                <div style="display: none;" id="actualRate">@Model.Rate</div>
+                <p style="margin-left: 150px; font-size: 20px;">
+
+                    <i id="first" class="icon-star-empty"></i>
+                    <i id="second" class="icon-star-empty"></i>
+                    <i id="third" class="icon-star-empty"></i>
+                    <i id="fourth"  class="icon-star-empty"></i>
+                    <i id="five"  class="icon-star-empty"></i>
+                </p>
+            </div>
+            <div id="rightAdnotations">
+                <div style="margin-top: 10px;">
+                    <b style="font-size: 24px; ">@Model.Name</b>
+                </div>
+              
+        
+                <div id="leftCont">
+                    <div id="company">                      
+                        <h3>Firma: @Model.Company</h3>
+                    </div>
+                    <div id="informations">
+                        <p><b>Model: @Model.Model </b></p>
+                        <p><b>Rodzaj: @Model.Type </b></p>
+                        <p><b>Wymiary: </b></p>
+                        <ul>
+                            <li>Długość: @Model.Lenght cm</li>
+                            <li>Szerokość: @Model.Width cm</li>
+                            <li>Wysokość: @Model.Height cm</li>
+                            <li>Głębokość: @Model.Greg cm</li>
+                        </ul>
+                        <br/>
+                        <p id="firstP" style="font-weight: bold;">Oceń produkt: </p>
+                        <p style="font-size: 30px;">
+                          
+                            <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = Model.Id, voteRate = 1 })'" class="icon-star-empty"></i>
+                            <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = Model.Id, voteRate = 2 })'" class="icon-star-empty"></i>
+                            <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = Model.Id, voteRate = 3 })'" class="icon-star-empty"></i>
+                            <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = Model.Id, voteRate = 4 })'" class="icon-star-empty"></i>
+                            <i onclick="location.href='@Url.Action("ChangeRate","Products", new { id = Model.Id, voteRate = 5 })'" class="icon-star-empty"></i>
+                        </p>
+                       
+                        <p style="font-weight: bold;">Kolor: </p>
+                        <p>@Model.Color</p>
+                        <p style="font-weight: bold;">Dostępność w sklepie: </p>
+                        <p>@Model.State</p>
+
+                    </div>
+                </div>
+                <div id="rightCont">
+                     <ul>
+                         <li>
+                             <div style="float: left; height: 110px; padding: 10px;">
+                                 Ilość: @Html.TextBox("elo")
+                             </div>
+                             <div style="float: left; height: 110px; padding: 10px; text-align: right; width: 220px;">
+                                 <b  style="font-size: 30px;"><span>@Model.Cost</span> zł</b>
+                                 <p>@Model.Cost / szt</p>
+                                 <p style="font-size: 12px;">Cena zawiera podatek VAT 23%</p>
+                             </div>
+                             <div style="clear:both;"></div>
+                         </li>
+                         <li> 
+                               <div id="leftCont1">
+                                   <br/>
+                                   <b>Zamów i odbierz w sklepie</b>
+                                   <br/>
+                                   <br />
+                                   Produkt będzie dostępny już następnego dnia roboczego!
+                               </div> 
+                             <div id="rightCont1">
+                                 <p><i class="icon-suitcase"></i></p>
+                             </div>
+                         </li>
+                         <li>
+                             <p><b style="color: black;">W sklepie F.H.U. PANELEO</b> dostepność produktów jest ograniczona. Przed odwiedzeniem postaraj się sprawdzić dostępność na stronie.</p>
+                            
+                         </li>
+                     </ul>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div style="clear:both;"></div>
+          
+            <div class="advforYou">
+                <h2>Rekomendacje dla Ciebie</h2>
+                <div class="advforYouContainer">
+                    <ul>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="advforYou">
+                <h2>Podobne produkty</h2>
+                <div class="advforYouContainer">
+                    <ul>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+
+                    </ul>
+                </div>
+
+            </div>
+    @Html.Partial("_preFooter")
+    @Html.Partial("_footer")
+        </div>
+        </div>
+</body>
+</html>

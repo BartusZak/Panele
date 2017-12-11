@@ -1,0 +1,147 @@
+﻿@model Panele.Models.Product
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/Content/ManageStyles.css" rel="stylesheet" />
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <div id="manageContainer">
+            <div id="leftPanel">
+                <span>MY ADMIN Interface</span>
+                <ul>
+                    <li>@Html.ActionLink("Wylistuj produkty", "Index", "Manage")</li>
+                    <li>@Html.ActionLink("Usuń produkty", "DeleteProduct", "Manage")</li>
+                    <li>@Html.ActionLink("Strona główna", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Wyloguj", "EditDetails", "Manage")</li>
+                </ul>
+            </div>
+            <div id="rightPanel">
+                <div id="infoDesk">
+                    <ul>
+                        <li>
+                            <label>Znajdź</label>
+                        </li>
+                        <li>
+                            <label>Rodzaj</label>
+                        </li>
+                        <li>
+                            <label>Data dodania</label>
+                        </li>
+                        <li>
+                            <label>Cena</label>
+                        </li>
+                        <li>
+                            <label>Identyfikator</label>
+                        </li>
+                        <li>
+                            <label>Alfabetycznie</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="cont">
+                @using (Html.BeginForm("Update", "Manage"))
+                {
+                    @Html.ValidationSummary()
+                    <div style="display: none;" class="place">
+                        @Html.TextBoxFor(m => m.Id, new { placeholder = "Miejsce na nazwę produktu" })
+                    </div>
+                    <div class="place">
+                        <p><b>Nazwa: </b></p>
+                        @Html.TextBoxFor(m => m.Name, new { placeholder = "Miejsce na nazwę produktu" })
+                    </div>
+                    <div class="place">
+                        <p><b>Model: </b></p>
+                        @Html.TextBoxFor(m => m.Model, new { placeholder = "Miejsce na określenie modelu" })
+                    </div>
+                    <div class="place">
+                        <p><b>Firma: </b></p>
+                        @Html.TextBoxFor(m => m.Company, new { placeholder = "Miejsce na nazwę firmy" })
+                    </div>
+                    <div class="place">
+                        <p><b>Cena: </b></p>
+                        @Html.TextBoxFor(m => m.Cost, new { placeholder = "Miejscę na cenę" })
+                    </div>
+                    <div class="place">
+                        <p><b>Stan: </b></p>
+                        @Html.DropDownListFor(m => m.State, new[] { new SelectListItem() { Text="Posiadany", Value="Posiadany" },
+                        new SelectListItem (){Text="Brak",Value="Brak"}}, "Wybierz stan", new { @class = "drp" })
+                        @Html.ValidationMessageFor(x => x.State)
+                    </div>
+                    <div class="place">
+                        <p><b>Rodzaj: </b></p>
+                        @Html.TextBoxFor(m => m.Type, new { placeholder = "Przeznaczenie produktu" })
+                    </div>
+                    <div class="place">
+                        <p><b>Kategoria: </b></p>
+                        @Html.DropDownListFor(x => x.Category, new[] {
+                           new SelectListItem() {Text="Salon", Value="Salon" },
+                           new SelectListItem() {Text="Pokój", Value = "Pokój"},
+                           new SelectListItem() {Text="Kuchnia", Value="Kuchnia"},
+                           new SelectListItem() {Text="Łazienka", Value="Łazienka"},
+                           new SelectListItem() {Text="Ogród", Value="Ogród"},
+                           new SelectListItem() {Text="Inne", Value = "Inne"},
+                           new SelectListItem() {Text="Usługi", Value = "Usługi"},
+                           new SelectListItem() {Text="Akcesoria", Value = "Akcesoria"} }, "Wybierz kategorię", new { @class = "drp" })
+                        @Html.ValidationMessageFor(m => m.Category)
+                    </div>
+                    <div class="place">
+                        <p><b>Szerokość: </b></p>
+                        @Html.TextBoxFor(m => m.Width, new { placeholder = "Szerokość w centymetrach" })
+                    </div>
+                    <div class="place">
+                        <p><b>Długość: </b></p>
+                        @Html.TextBoxFor(m => m.Lenght, new { placeholder = "Długość w centymetrach" })
+                    </div>
+                    <div class="place">
+                        <p><b>Wysokość: </b></p>
+                        @Html.TextBoxFor(m => m.Height, new { placeholder = "Wysokość w centymetrach" })
+                    </div>
+                    <div class="place">
+                        <p><b>Waga: </b></p>
+                        @Html.TextBoxFor(m => m.Weight, new { placeholder = "Waga w kilogramach" })
+                    </div>
+                    <div class="place">
+                        <p><b>Głębokość: </b></p>
+                        @Html.TextBoxFor(m => m.Greg, new { placeholder = "Głębokość w centymetrach" })
+                    </div>
+                    <div class="place">
+                        <p><b>Kolor: </b></p>
+                        @Html.TextBoxFor(m => m.Color, new { placeholder = "Kolor produktu" })
+                    </div>
+                    <div class="place">
+                        <p><b>Materiał: </b></p>
+                        @Html.TextBoxFor(m => m.Material, new { placeholder = "Materiał, z którego wykonany jest produkt" })
+                    </div>
+                    <div class="place">
+                        <p><b>Krótki opis: </b></p>
+                        @Html.TextBoxFor(m => m.Description, new { placeholder = "Miejsce na opis" })
+                    </div>
+                    @Html.AntiForgeryToken()
+                    <button style="margin-left: 20px;" class="butt" onclick="location.href='@Url.Action("Update", "Manage")'">
+                        <span>Zapisz</span>
+                    </button>
+                }
+
+
+            </div>
+
+            <div style="clear: both;"></div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

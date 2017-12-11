@@ -1,0 +1,183 @@
+﻿@model PagedList.IPagedList<Panele.Models.Product>
+@using PagedList.Mvc
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>F.H.U. PANELEO</title>
+
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+    <link href="~/Content/MainStyles.css" rel="stylesheet" />
+    <link href="~/Content/OfertStyles.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/Scripts/ChangingColor.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+</head>
+<body>
+    <div>
+        @Html.Partial("_navBar")
+        <div class="Container">
+            <div style="width: 98%;" class="secondNavBar">
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index", new { sortBy = "Ogród" })'">
+                    <span>Ogród</span>
+                </button>
+
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index", new { sortBy = "Salon" })'">
+                    <span>Salon</span>
+                </button>
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index",new { sortBy = "Pokój" })'">
+                    <span>Pokoje</span>
+                </button>
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index",new { sortBy = "Łazienka" })'">
+                    <span>Łazienki</span>
+                </button>
+
+                @using (Html.BeginForm())
+                {
+                   
+                    
+                    <button style="color: black;" class="coolbutt" onclick="location.href='@Url.Action("Index")'">
+                        <span>Znajdź</span>
+                    </button>
+                    @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+
+
+                }
+           
+               
+                
+
+            </div>
+            <div style="width: 98%; margin-bottom: 30px;" class="secondNavBar">
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index", new { sortBy = "Kuchnia" })'">
+                    <span>Kuchnia</span>
+                </button>
+
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index", new { sortBy = "Inne" })'">
+                    <span>Inne</span>
+                </button>
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index",new { sortBy = "Akcesoria" })'">
+                    <span>Akcesoria</span>
+                </button>
+                <button class="coolbutt" onclick="location.href='@Url.Action("Index",new { sortBy = "Usługi" })'">
+                    <span>Usługi</span>
+                </button>
+                <button style="width: 400px;" class="coolbutt" onclick="location.href='@Url.Action("Index")'">
+                    <span>Wszystkie</span>
+                </button>
+             
+              
+            </div>
+
+
+
+          
+            
+            <div class="Content">
+                @foreach (var element in Model)
+                {
+                
+                    <div class="table">
+
+                        <div class="title">
+                            <p>@Html.ActionLink(element.Name, "Details", "Products", new { id = element.Id }, null)</p>
+
+                        </div>
+                        <div class="state">
+                            <p><span style="margin: 0px;">Status:  </span>@element.State</p>
+
+                        </div>
+                        <div class="corp">
+                            <p> <span style="margin: 0px;">Firma: </span> @element.Company</p>
+                        </div>
+                        <div class="rate">
+
+
+                            <p>Ocena: <span>@Math.Round(element.Rate, 2)</span></p>
+                        </div>
+
+                        <div class="imgContent">
+                            <p><img src="~/Content/image.jpg" width="223" height="200" /></p>
+                        </div>
+                        <div class="costLook">
+                            <div class="leftLook">
+                                @element.Cost zł
+                            </div>
+                            <div class="rightLook">
+                                <i class="icon-suitcase"></i>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+          
+          
+
+            <div class="pagination-in-Offert" style="margin-top: 30px;">
+
+
+                @if (Model.PageCount <= 0)
+                {
+                    <p style="color: red; font-weight: bold;">Przykro nam. Nie ma nic do wyświetlenia !</p>
+                }
+                else
+                {
+                    <p>
+
+
+                        @Html.PagedListPager(Model, page => Url.Action("Index",
+                            new { page, CurrentFilter =ViewBag.CurrentFilter, sortBy = ViewBag.currentSort }))
+                        Strona @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+
+                    </p>
+
+                }
+            </div>
+            <div style="clear: both;"></div>
+            <div class="advforYou">
+                <h2>Rekomendacje dla Ciebie</h2>
+                <div class="advforYouContainer">
+                    <ul>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="advforYou">
+                <h2>Szczególnie polecamy</h2>
+                <div class="advforYouContainer">
+                    <ul>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+                        <li>Wiertarka</li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+      
+        @Html.Partial("_prefooter")
+        @Html.Partial("_footer")
+    </div>
+
+</body>
+</html>

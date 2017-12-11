@@ -1,0 +1,113 @@
+﻿@model Panele.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/Content/ManageStyles.css" rel="stylesheet" />
+    <script src="~/Scripts/ChangingColor.js"></script>
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+</head>
+<body onload="changingColor()">
+    <div> 
+
+        
+        <div id="manageContainer">
+            <div style="height: 1300px;" id="leftPanel">
+                <span>MY ADMIN Interface</span>
+                <ul>
+                    <li>@Html.ActionLink("Wylistuj produkty", "Index", "Manage")</li>
+                    <li>@Html.ActionLink("Dodaj produkt", "AddProduct", "Manage")</li>
+                    <li>@Html.ActionLink("Usuń produkty", "DeleteProduct", "Manage")</li>
+                    <li>@Html.ActionLink("Strona główna", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Wyloguj", "EditDetails", "Manage")</li>
+                </ul>
+            </div>
+            <div id="rightPanel">
+                <div id="infoDesk">
+                   
+                </div>
+            </div>
+
+            <div  id="cont">
+                <h1>Szczegóły</h1>
+                <div id="up">
+                    
+                    <p>Krótki opis: <b>@Model.Description</b></p>
+                </div>
+                <div  id="placeL">
+                    <p>Identyfikator: <b>@Model.Id</b></p>
+                    <p>Nazwa: <b>@Model.Name</b></p>
+                    <p>Model: <b>@Model.Model</b></p>
+                    <p>Firma: <b>@Model.Company</b></p>
+                    <p>Cena: <b>@Model.Cost</b></p>
+                    <p>Data dodania: <b>@Model.AddDate</b></p>
+                    <p>Stan: <b>@Model.State</b></p>
+                    <p>Rodzaj: <b>@Model.Type</b></p>
+                    <p>Kategoria: <b>@Model.Category</b></p>
+                    <h2>Wymiary: </h2>
+                    <table class="products">
+                        <tr>
+                            <th>Szerokość</th>
+                            <th>Długość</th>
+                            <th>Wysokość</th>
+                            <th>Waga</th>
+                            <th>Głębokość</th>
+                        </tr>
+                        <tr>
+                            <td>@Model.Width</td>
+                            <td>@Model.Lenght</td>
+                            <td>@Model.Height</td>
+                            <td>@Model.Weight</td>
+                            <td>@Model.Greg</td>
+                        </tr>
+                    </table>
+                    <p>Ocena użytkowników: <b id="actualRate">@Model.Rate</b></p>
+                    <p>Liczba głosów: <b>@Model.numberOfVotes</b></p>
+                    <p>Materiał: <b>@Model.Material</b></p>
+                    <p>Kolor: <b>@Model.Color</b></p>
+                    
+                 
+                 
+                </div>
+                <div  id="placeR">
+                    <img style="margin-top: 15px;" src="~/Content/adv 1.jpg" width="650" height="530" />
+                    
+                    <p style="margin-left: 20px; font-size: 32px;">
+
+                        <i id="first" class="icon-star-empty"></i>
+                        <i id="second" class="icon-star-empty"></i>
+                        <i id="third" class="icon-star-empty"></i>
+                        <i id="fourth" class="icon-star-empty"></i>
+                        <i id="five" class="icon-star-empty"></i>
+                    </p>
+                    <button class="butt" onclick="location.href='@Url.Action("Index", "Manage")'">
+                        <span>Wróć</span>
+                    </button>
+                    <button class="butt" onclick="location.href='@Url.Action("Edit", "Manage",new { id=Model.Id })'">
+                        <span>Edytuj</span>
+                    </button>
+                    <button class="butt" onclick="location.href='@Url.Action("Delete", "Manage", new { id = Model.Id })'">
+                        <span>Usuń</span>
+                    </button>
+                   
+                </div>
+                <div style="clear: both;"></div>
+             
+              
+             
+            </div>
+           
+            <div style="clear: both;"></div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.H.U. PANELEO Leszek Płoszyński</title>
+    <link href="~/Content/Pictures/typki/css/fontello.css" rel="stylesheet" />
+    <link href="~/Content/MainStyles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato" rel="stylesheet">
+    <script src="~/Scripts/ChangingColor.js"></script>
+</head>
+<body onload="changingColor()">
+    @Html.Partial("_fb")
+    @Html.Partial("_navBar")
+<div id="content">
+    @RenderBody()
+</div>
+
+
+@Html.Partial("_preFooter")
+@Html.Partial("_footer")
+</body>
+</html>
